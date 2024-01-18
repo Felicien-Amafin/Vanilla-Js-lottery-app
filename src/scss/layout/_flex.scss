@@ -1,7 +1,11 @@
+@import '../base/mixins';
+
 .flex-column {
+    @include flexCenter;
     flex-direction: column;
 }
 
 .flex-row {
+    @include flexCenter;
     flex-direction: row;
 }

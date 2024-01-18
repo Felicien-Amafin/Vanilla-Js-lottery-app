@@ -67,7 +67,7 @@ header h1 {
   align-items: center;
   font-weight: 700;
 }
-header nav {
+header .nav {
   width: 80%;
   max-width: 400px;
   height: 70px;
@@ -75,15 +75,74 @@ header nav {
   border-radius: 15px;
   box-shadow: 1px 2px 2px lightgray;
   border: 1px solid rgba(233, 230, 230, 0.425);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   justify-content: space-evenly;
 }
 header a {
   font-size: 1rem;
   color: rgb(19, 19, 107);
-}`, "",{"version":3,"sources":["webpack://./src/scss/base/_base.scss","webpack://./src/scss/main.scss","webpack://./src/scss/base/_typography.scss","webpack://./src/scss/base/_colors.scss","webpack://./src/scss/layout/_header.scss","webpack://./src/scss/base/_mixins.scss"],"names":[],"mappings":"AAEA;EACI,sBAAA;EACA,SAAA;EACA,UAAA;ACAJ;;ADGA;EACI,eAAA;ACAJ;;ADGA;EACI,iBAAA;EACA,+BAAA;ACAJ;;ADGA;EACI,aAAA;ACAJ;;AClBA;EACI,0BAAA;EACA,2BAAA;EACA,uCCFG;EDGH,8BAAA;ADqBJ;;AClBA;EACI,gBAAA;ADqBJ;;AG5BA;EACI,WAAA;AH+BJ;AG9BI;EACI,aAAA;EACA,kCDJD;ECKC,YDNA;ECOA,kBAAA;EACA,eAAA;EACA,kBAAA;ECRJ,aAAA;EACA,uBAAA;EACA,mBAAA;EDQI,gBAAA;AHkCR;AG/BI;EACI,UAAA;EACA,gBAAA;EACA,YAAA;EACA,iBAAA;EACA,mBAAA;EACA,iCAAA;EACA,4CAAA;ECpBJ,aAAA;EACA,uBAAA;EACA,mBAAA;EDoBI,6BAAA;AHmCR;AGhCI;EACI,eAAA;EACA,uBD3BD;AF6DP","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');\r\n\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    min-height: 100vh;\r\n    font-family: 'Sora', sans-serif;\r\n}\r\n\r\n.none {\r\n    display: none;\r\n}\r\n\r\n","@import url(\"https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  min-height: 100vh;\n  font-family: \"Sora\", sans-serif;\n}\n\n.none {\n  display: none;\n}\n\n.underline {\n  text-decoration: underline;\n  text-underline-offset: 10px;\n  text-decoration-color: rgb(19, 19, 107);\n  text-decoration-thickness: 3px;\n}\n\n.a-Clicked {\n  font-weight: 600;\n}\n\nheader {\n  width: 100%;\n}\nheader h1 {\n  height: 120px;\n  background-color: rgb(19, 19, 107);\n  color: white;\n  font-size: 1.75rem;\n  padding: 0 20px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 700;\n}\nheader nav {\n  width: 80%;\n  max-width: 400px;\n  height: 70px;\n  margin: 15px auto;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-evenly;\n}\nheader a {\n  font-size: 1rem;\n  color: rgb(19, 19, 107);\n}",".underline {\r\n    text-decoration: underline;\r\n    text-underline-offset: 10px;\r\n    text-decoration-color: $blue;\r\n    text-decoration-thickness: 3px;\r\n}\r\n\r\n.a-Clicked {\r\n    font-weight: 600;\r\n}","$white: white;\r\n$blue: rgb(19, 19, 107);\r\n$gray: rgba(233, 230, 230, 0.425);\r\n$light-gray: lightgray;","\r\nheader {\r\n    width: 100%;\r\n    h1 {\r\n        height: 120px;\r\n        background-color: $blue;\r\n        color: $white;\r\n        font-size: 1.75rem;\r\n        padding: 0 20px;\r\n        text-align: center;\r\n        @include flexCenter;\r\n        font-weight: 700;\r\n    }\r\n\r\n    nav {\r\n        width: 80%;\r\n        max-width: 400px;\r\n        height: 70px;\r\n        margin: 15px auto;\r\n        border-radius: 15px;\r\n        box-shadow: 1px 2px 2px $light-gray;\r\n        border: 1px solid $gray;\r\n        @include flexCenter;\r\n        justify-content: space-evenly;\r\n    }\r\n\r\n    a { \r\n        font-size: 1rem;\r\n        color: $blue;\r\n    }\r\n}","@mixin flexCenter {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}"],"sourceRoot":""}]);
+}
+
+.flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.last-results {
+  padding: 0 15px;
+  margin-top: 2.5rem;
+  gap: 50px;
+}
+.last-results__title {
+  font-size: 1.375rem;
+  color: black;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.draw {
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.draw__date {
+  font-size: 0.875rem;
+  color: black;
+}
+.draw__balls {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.draw__balls-5 {
+  gap: 5px;
+}
+.draw__balls-2 {
+  gap: 5px;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ball--blue {
+  background-color: rgb(19, 19, 107);
+}
+.ball--yellow {
+  background-color: rgb(255, 230, 0);
+}`, "",{"version":3,"sources":["webpack://./src/scss/base/_base.scss","webpack://./src/scss/main.scss","webpack://./src/scss/base/_typography.scss","webpack://./src/scss/base/_colors.scss","webpack://./src/scss/layout/_header.scss","webpack://./src/scss/base/_mixins.scss","webpack://./src/scss/layout/_flex.scss","webpack://./src/scss/layout/_last-results.scss","webpack://./src/scss/components/_balls.scss"],"names":[],"mappings":"AAEA;EACI,sBAAA;EACA,SAAA;EACA,UAAA;ACAJ;;ADGA;EACI,eAAA;ACAJ;;ADGA;EACI,iBAAA;EACA,+BAAA;ACAJ;;ADGA;EACI,aAAA;ACAJ;;AClBA;EACI,0BAAA;EACA,2BAAA;EACA,uCCFG;EDGH,8BAAA;ADqBJ;;AClBA;EACI,gBAAA;ADqBJ;;AG5BA;EACI,WAAA;AH+BJ;AG9BI;EACI,aAAA;EACA,kCDJD;ECKC,YDNA;ECOA,kBAAA;EACA,eAAA;EACA,kBAAA;ECRJ,aAAA;EACA,uBAAA;EACA,mBAAA;EDQI,gBAAA;AHkCR;AG/BI;EACI,UAAA;EACA,gBAAA;EACA,YAAA;EACA,iBAAA;EACA,mBAAA;EACA,iCAAA;EACA,4CAAA;EACA,6BAAA;AHiCR;AG9BI;EACI,eAAA;EACA,uBD1BD;AF0DP;;AKzDA;EDDI,aAAA;EACA,uBAAA;EACA,mBAAA;ECCA,sBAAA;AL8DJ;;AK3DA;EDNI,aAAA;EACA,uBAAA;EACA,mBAAA;ECMA,mBAAA;ALgEJ;;AMzEA;EACI,eAAA;EACA,kBAAA;EACA,SAAA;AN4EJ;AM1EI;EACI,mBAAA;EACA,YJHA;EIIA,kBAAA;EACA,mBAAA;AN4ER;;AMvEA;EACI,SAAA;EACA,mBAAA;AN0EJ;AMxEI;EACI,mBAAA;EACA,YJhBA;AF0FR;AMvEI;EACI,SAAA;EACA,eAAA;ANyER;AMtEI;EACI,QAAA;ANwER;AMrEI;EACI,QAAA;ANuER;;AOrGA;EACI,WAAA;EACA,YAAA;EACA,oBAAA;EACA,YLPI;EKQJ,gBAAA;EHPA,aAAA;EACA,uBAAA;EACA,mBAAA;AJgHJ;AOxGI;EACI,kCLXD;AFqHP;AOvGI;EACI,kCLXC;AFoHT","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');\r\n\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    min-height: 100vh;\r\n    font-family: 'Sora', sans-serif;\r\n}\r\n\r\n.none {\r\n    display: none;\r\n}\r\n\r\n","@import url(\"https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  min-height: 100vh;\n  font-family: \"Sora\", sans-serif;\n}\n\n.none {\n  display: none;\n}\n\n.underline {\n  text-decoration: underline;\n  text-underline-offset: 10px;\n  text-decoration-color: rgb(19, 19, 107);\n  text-decoration-thickness: 3px;\n}\n\n.a-Clicked {\n  font-weight: 600;\n}\n\nheader {\n  width: 100%;\n}\nheader h1 {\n  height: 120px;\n  background-color: rgb(19, 19, 107);\n  color: white;\n  font-size: 1.75rem;\n  padding: 0 20px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 700;\n}\nheader .nav {\n  width: 80%;\n  max-width: 400px;\n  height: 70px;\n  margin: 15px auto;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  justify-content: space-evenly;\n}\nheader a {\n  font-size: 1rem;\n  color: rgb(19, 19, 107);\n}\n\n.flex-column {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.flex-row {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n\n.last-results {\n  padding: 0 15px;\n  margin-top: 2.5rem;\n  gap: 50px;\n}\n.last-results__title {\n  font-size: 1.375rem;\n  color: black;\n  text-align: center;\n  margin-bottom: 50px;\n}\n\n.draw {\n  gap: 20px;\n  margin-bottom: 50px;\n}\n.draw__date {\n  font-size: 0.875rem;\n  color: black;\n}\n.draw__balls {\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.draw__balls-5 {\n  gap: 5px;\n}\n.draw__balls-2 {\n  gap: 5px;\n}\n\n.ball {\n  width: 40px;\n  height: 40px;\n  border-radius: 100px;\n  color: white;\n  font-weight: 700;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.ball--blue {\n  background-color: rgb(19, 19, 107);\n}\n.ball--yellow {\n  background-color: rgb(255, 230, 0);\n}",".underline {\r\n    text-decoration: underline;\r\n    text-underline-offset: 10px;\r\n    text-decoration-color: $blue;\r\n    text-decoration-thickness: 3px;\r\n}\r\n\r\n.a-Clicked {\r\n    font-weight: 600;\r\n}","$white: white;\r\n$blue: rgb(19, 19, 107);\r\n$gray: rgba(233, 230, 230, 0.425);\r\n$light-gray: lightgray;\r\n$black: black;\r\n$yellow: rgb(255, 230, 0);","\r\nheader {\r\n    width: 100%;\r\n    h1 {\r\n        height: 120px;\r\n        background-color: $blue;\r\n        color: $white;\r\n        font-size: 1.75rem;\r\n        padding: 0 20px;\r\n        text-align: center;\r\n        @include flexCenter;\r\n        font-weight: 700;\r\n    }\r\n\r\n    .nav {\r\n        width: 80%;\r\n        max-width: 400px;\r\n        height: 70px;\r\n        margin: 15px auto;\r\n        border-radius: 15px;\r\n        box-shadow: 1px 2px 2px $light-gray;\r\n        border: 1px solid $gray;\r\n        justify-content: space-evenly;\r\n    }\r\n\r\n    a { \r\n        font-size: 1rem;\r\n        color: $blue;\r\n    }\r\n}","@mixin flexCenter {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}","@import '../base/mixins';\r\n\r\n.flex-column {\r\n    @include flexCenter;\r\n    flex-direction: column;\r\n}\r\n\r\n.flex-row {\r\n    @include flexCenter;\r\n    flex-direction: row;\r\n}",".last-results {\r\n    padding: 0 15px;\r\n    margin-top: 2.5rem;\r\n    gap: 50px;\r\n\r\n    &__title {\r\n        font-size: 1.375rem;\r\n        color: $black;\r\n        text-align: center;\r\n        margin-bottom: 50px;\r\n    }\r\n}\r\n\r\n\r\n.draw {\r\n    gap: 20px;\r\n    margin-bottom: 50px;\r\n\r\n    &__date {\r\n        font-size: 0.875rem;\r\n        color: $black;\r\n    }\r\n\r\n    &__balls {\r\n        gap: 10px;\r\n        flex-wrap: wrap;\r\n    }\r\n\r\n    &__balls-5 {\r\n        gap: 5px;\r\n    }\r\n\r\n    &__balls-2 {\r\n        gap: 5px;\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n","@import '../base/colors';\r\n@import '../base/mixins';\r\n\r\n.ball {\r\n    width: 40px;\r\n    height: 40px;\r\n    border-radius: 100px;\r\n    color: $white;\r\n    font-weight: 700;\r\n    @include flexCenter;\r\n\r\n    &--blue {\r\n        background-color: $blue;\r\n    }\r\n\r\n    &--yellow {\r\n        background-color: $yellow;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -616,4 +675,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=5419be81b30fec2ecb88.js.map
+//# sourceMappingURL=0d524a01caade1adf680.js.map

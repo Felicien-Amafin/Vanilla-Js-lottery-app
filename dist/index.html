@@ -4,25 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Euromillions Results</title>
-<script defer src="5419be81b30fec2ecb88.js"></script></head>
+<script defer src="0d524a01caade1adf680.js"></script></head>
 <body>
     <header>
         <h1>The Euromillions' results</h1>
-        <nav class="flex-row">
+        <nav class="nav flex-row">
             <a class="underline a-Clicked">Last results</a>
             <a>Simulator</a>
         </nav>
     </header>
     <main id="page-container">
-        <article id="last-results">
-            <h2>The fifty last draws</h2>
-            <ul id="draws">
-                <li>
-                    <p id="balls"></p>
-                    <p id="stars"></p>
-                    <p id="date"></p>
-                </li>
-            </ul>
+        <article id="last-results" class="last-results">
+            <h2 class="last-results__title">The fifty last draws</h2>
+            <section id="draws" class="draws flex-column">
+                <div class="draw flex-column">
+                    <h3 id="draw__date" class="draw__date">26/12/2024</h3>
+                    <div class="draw__balls flex-row">
+                        <ul id="draw__balls-5" class="draw__balls-5 flex-row">
+                            <li class="ball ball--blue flex-column">15</li>
+                            <li class="ball ball--blue flex-column">25</li>
+                            <li class="ball ball--blue flex-column">26</li>
+                            <li class="ball ball--blue flex-column">35</li>
+                            <li class="ball ball--blue flex-column">50</li>
+                        </ul>
+                        <ul id="draw__balls-2" class="draw__balls-2 flex-row">
+                            <li class="ball ball--yellow flex-column">2</li>
+                            <li class="ball ball--yellow flex-column">12</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="draw flex-column">
+                    <h3 id="draw__date" class="draw__date">28/12/2024</h3>
+                    <div class="draw__balls flex-row">
+                        <ul id="draw__balls-5" class="draw__balls-5 flex-row">
+                            <li class="ball ball--blue flex-column">45</li>
+                            <li class="ball ball--blue flex-column">25</li>
+                            <li class="ball ball--blue flex-column">26</li>
+                            <li class="ball ball--blue flex-column">5</li>
+                            <li class="ball ball--blue flex-column">50</li>
+                        </ul>
+                        <ul id="draw__balls-2" class="draw__balls-2 flex-row">
+                            <li class="ball ball--yellow flex-column">2</li>
+                            <li class="ball ball--yellow flex-column">11</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </article>
         <article id="simulator" class="none">
             <ul id="menu">
