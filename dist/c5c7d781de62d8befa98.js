@@ -52,6 +52,10 @@ body {
   font-weight: 600;
 }
 
+a {
+  cursor: pointer;
+}
+
 header {
   width: 100%;
 }
@@ -60,7 +64,7 @@ header h1 {
   background-color: rgb(19, 19, 107);
   color: white;
   font-size: 1.75rem;
-  padding: 0 20px;
+  padding: 10px 20px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -72,10 +76,10 @@ header .nav {
   max-width: 400px;
   height: 70px;
   margin: 15px auto;
+  justify-content: space-evenly;
   border-radius: 15px;
   box-shadow: 1px 2px 2px lightgray;
   border: 1px solid rgba(233, 230, 230, 0.425);
-  justify-content: space-evenly;
 }
 header a {
   font-size: 1rem;
@@ -122,11 +126,39 @@ header a {
 }
 .draw__balls-5 {
   gap: 5px;
+  flex-wrap: wrap;
 }
 .draw__balls-2 {
   gap: 5px;
 }
 
+.simulator {
+  width: 100%;
+  margin-top: 40px;
+}
+.simulator .menu {
+  padding: 40px;
+  min-height: 250px;
+  width: 80%;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 2px 2px lightgray;
+  border: 1px solid rgba(233, 230, 230, 0.425);
+}
+.simulator li:hover {
+  color: rgb(19, 19, 107);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* li:hover {
+    text-decoration: 1px solid \$blue;
+}  */
 .ball {
   width: 40px;
   height: 40px;
@@ -142,7 +174,7 @@ header a {
 }
 .ball--yellow {
   background-color: rgb(255, 230, 0);
-}`, "",{"version":3,"sources":["webpack://./src/scss/base/_base.scss","webpack://./src/scss/main.scss","webpack://./src/scss/base/_typography.scss","webpack://./src/scss/base/_colors.scss","webpack://./src/scss/layout/_header.scss","webpack://./src/scss/base/_mixins.scss","webpack://./src/scss/layout/_flex.scss","webpack://./src/scss/layout/_last-results.scss","webpack://./src/scss/components/_balls.scss"],"names":[],"mappings":"AAEA;EACI,sBAAA;EACA,SAAA;EACA,UAAA;ACAJ;;ADGA;EACI,eAAA;ACAJ;;ADGA;EACI,iBAAA;EACA,+BAAA;ACAJ;;ADGA;EACI,aAAA;ACAJ;;AClBA;EACI,0BAAA;EACA,2BAAA;EACA,uCCFG;EDGH,8BAAA;ADqBJ;;AClBA;EACI,gBAAA;ADqBJ;;AG5BA;EACI,WAAA;AH+BJ;AG9BI;EACI,aAAA;EACA,kCDJD;ECKC,YDNA;ECOA,kBAAA;EACA,eAAA;EACA,kBAAA;ECRJ,aAAA;EACA,uBAAA;EACA,mBAAA;EDQI,gBAAA;AHkCR;AG/BI;EACI,UAAA;EACA,gBAAA;EACA,YAAA;EACA,iBAAA;EACA,mBAAA;EACA,iCAAA;EACA,4CAAA;EACA,6BAAA;AHiCR;AG9BI;EACI,eAAA;EACA,uBD1BD;AF0DP;;AKzDA;EDDI,aAAA;EACA,uBAAA;EACA,mBAAA;ECCA,sBAAA;AL8DJ;;AK3DA;EDNI,aAAA;EACA,uBAAA;EACA,mBAAA;ECMA,mBAAA;ALgEJ;;AMzEA;EACI,eAAA;EACA,kBAAA;EACA,SAAA;AN4EJ;AM1EI;EACI,mBAAA;EACA,YJHA;EIIA,kBAAA;EACA,mBAAA;AN4ER;;AMvEA;EACI,SAAA;EACA,mBAAA;AN0EJ;AMxEI;EACI,mBAAA;EACA,YJhBA;AF0FR;AMvEI;EACI,SAAA;EACA,eAAA;ANyER;AMtEI;EACI,QAAA;ANwER;AMrEI;EACI,QAAA;ANuER;;AOrGA;EACI,WAAA;EACA,YAAA;EACA,oBAAA;EACA,YLPI;EKQJ,gBAAA;EHPA,aAAA;EACA,uBAAA;EACA,mBAAA;AJgHJ;AOxGI;EACI,kCLXD;AFqHP;AOvGI;EACI,kCLXC;AFoHT","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');\r\n\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    min-height: 100vh;\r\n    font-family: 'Sora', sans-serif;\r\n}\r\n\r\n.none {\r\n    display: none;\r\n}\r\n\r\n","@import url(\"https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  min-height: 100vh;\n  font-family: \"Sora\", sans-serif;\n}\n\n.none {\n  display: none;\n}\n\n.underline {\n  text-decoration: underline;\n  text-underline-offset: 10px;\n  text-decoration-color: rgb(19, 19, 107);\n  text-decoration-thickness: 3px;\n}\n\n.a-Clicked {\n  font-weight: 600;\n}\n\nheader {\n  width: 100%;\n}\nheader h1 {\n  height: 120px;\n  background-color: rgb(19, 19, 107);\n  color: white;\n  font-size: 1.75rem;\n  padding: 0 20px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 700;\n}\nheader .nav {\n  width: 80%;\n  max-width: 400px;\n  height: 70px;\n  margin: 15px auto;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  justify-content: space-evenly;\n}\nheader a {\n  font-size: 1rem;\n  color: rgb(19, 19, 107);\n}\n\n.flex-column {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.flex-row {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n\n.last-results {\n  padding: 0 15px;\n  margin-top: 2.5rem;\n  gap: 50px;\n}\n.last-results__title {\n  font-size: 1.375rem;\n  color: black;\n  text-align: center;\n  margin-bottom: 50px;\n}\n\n.draw {\n  gap: 20px;\n  margin-bottom: 50px;\n}\n.draw__date {\n  font-size: 0.875rem;\n  color: black;\n}\n.draw__balls {\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.draw__balls-5 {\n  gap: 5px;\n}\n.draw__balls-2 {\n  gap: 5px;\n}\n\n.ball {\n  width: 40px;\n  height: 40px;\n  border-radius: 100px;\n  color: white;\n  font-weight: 700;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.ball--blue {\n  background-color: rgb(19, 19, 107);\n}\n.ball--yellow {\n  background-color: rgb(255, 230, 0);\n}",".underline {\r\n    text-decoration: underline;\r\n    text-underline-offset: 10px;\r\n    text-decoration-color: $blue;\r\n    text-decoration-thickness: 3px;\r\n}\r\n\r\n.a-Clicked {\r\n    font-weight: 600;\r\n}","$white: white;\r\n$blue: rgb(19, 19, 107);\r\n$gray: rgba(233, 230, 230, 0.425);\r\n$light-gray: lightgray;\r\n$black: black;\r\n$yellow: rgb(255, 230, 0);","\r\nheader {\r\n    width: 100%;\r\n    h1 {\r\n        height: 120px;\r\n        background-color: $blue;\r\n        color: $white;\r\n        font-size: 1.75rem;\r\n        padding: 0 20px;\r\n        text-align: center;\r\n        @include flexCenter;\r\n        font-weight: 700;\r\n    }\r\n\r\n    .nav {\r\n        width: 80%;\r\n        max-width: 400px;\r\n        height: 70px;\r\n        margin: 15px auto;\r\n        border-radius: 15px;\r\n        box-shadow: 1px 2px 2px $light-gray;\r\n        border: 1px solid $gray;\r\n        justify-content: space-evenly;\r\n    }\r\n\r\n    a { \r\n        font-size: 1rem;\r\n        color: $blue;\r\n    }\r\n}","@mixin flexCenter {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}","@import '../base/mixins';\r\n\r\n.flex-column {\r\n    @include flexCenter;\r\n    flex-direction: column;\r\n}\r\n\r\n.flex-row {\r\n    @include flexCenter;\r\n    flex-direction: row;\r\n}",".last-results {\r\n    padding: 0 15px;\r\n    margin-top: 2.5rem;\r\n    gap: 50px;\r\n\r\n    &__title {\r\n        font-size: 1.375rem;\r\n        color: $black;\r\n        text-align: center;\r\n        margin-bottom: 50px;\r\n    }\r\n}\r\n\r\n\r\n.draw {\r\n    gap: 20px;\r\n    margin-bottom: 50px;\r\n\r\n    &__date {\r\n        font-size: 0.875rem;\r\n        color: $black;\r\n    }\r\n\r\n    &__balls {\r\n        gap: 10px;\r\n        flex-wrap: wrap;\r\n    }\r\n\r\n    &__balls-5 {\r\n        gap: 5px;\r\n    }\r\n\r\n    &__balls-2 {\r\n        gap: 5px;\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n","@import '../base/colors';\r\n@import '../base/mixins';\r\n\r\n.ball {\r\n    width: 40px;\r\n    height: 40px;\r\n    border-radius: 100px;\r\n    color: $white;\r\n    font-weight: 700;\r\n    @include flexCenter;\r\n\r\n    &--blue {\r\n        background-color: $blue;\r\n    }\r\n\r\n    &--yellow {\r\n        background-color: $yellow;\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/scss/base/_base.scss","webpack://./src/scss/main.scss","webpack://./src/scss/base/_typography.scss","webpack://./src/scss/base/_colors.scss","webpack://./src/scss/layout/_header.scss","webpack://./src/scss/base/_mixins.scss","webpack://./src/scss/layout/_flex.scss","webpack://./src/scss/layout/_last-results.scss","webpack://./src/scss/layout/_simulator.scss","webpack://./src/scss/components/_balls.scss"],"names":[],"mappings":"AAEA;EACI,sBAAA;EACA,SAAA;EACA,UAAA;ACAJ;;ADGA;EACI,eAAA;ACAJ;;ADGA;EACI,iBAAA;EACA,+BAAA;ACAJ;;ADGA;EACI,aAAA;ACAJ;;AChBA;EACI,0BAAA;EACA,2BAAA;EACA,uCCJG;EDKH,8BAAA;ADmBJ;;AChBA;EACI,gBAAA;ADmBJ;;AChBA;EACI,eAAA;ADmBJ;;AGhCA;EACI,WAAA;AHmCJ;AGlCI;EACI,aAAA;EACA,kCDJD;ECKC,YDNA;ECOA,kBAAA;EACA,kBAAA;EACA,kBAAA;ECRJ,aAAA;EACA,uBAAA;EACA,mBAAA;EDQI,gBAAA;AHsCR;AGnCI;EACI,UAAA;EACA,gBAAA;EACA,YAAA;EACA,iBAAA;EACA,6BAAA;ECZJ,mBAAA;EACA,iCAAA;EACA,4CAAA;AJkDJ;AGpCI;EACI,eAAA;EACA,uBDxBD;AF8DP;;AK7DA;EDDI,aAAA;EACA,uBAAA;EACA,mBAAA;ECCA,sBAAA;ALkEJ;;AK/DA;EDNI,aAAA;EACA,uBAAA;EACA,mBAAA;ECMA,mBAAA;ALoEJ;;AM7EA;EACI,eAAA;EACA,kBAAA;EACA,SAAA;ANgFJ;AM9EI;EACI,mBAAA;EACA,YJHA;EIIA,kBAAA;EACA,mBAAA;ANgFR;;AM3EA;EACI,SAAA;EACA,mBAAA;AN8EJ;AM5EI;EACI,mBAAA;EACA,YJhBA;AF8FR;AM3EI;EACI,SAAA;EACA,eAAA;AN6ER;AM1EI;EACI,QAAA;EACA,eAAA;AN4ER;AMzEI;EACI,QAAA;AN2ER;;AO3GA;EACI,WAAA;EACA,gBAAA;AP8GJ;AO7GI;EACI,aAAA;EACA,iBAAA;EACA,UAAA;EACA,gBAAA;EACA,YAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,SAAA;EHPJ,mBAAA;EACA,iCAAA;EACA,4CAAA;AJuHJ;AO9GI;EACI,uBLlBD;EKmBC,gBAAA;EACA,eAAA;APgHR;;AO5GA;;IAAA;ACtBA;EACI,WAAA;EACA,YAAA;EACA,oBAAA;EACA,YNPI;EMQJ,gBAAA;EJPA,aAAA;EACA,uBAAA;EACA,mBAAA;AJgJJ;AQxII;EACI,kCNXD;AFqJP;AQvII;EACI,kCNXC;AFoJT","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');\r\n\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    min-height: 100vh;\r\n    font-family: 'Sora', sans-serif;\r\n}\r\n\r\n.none {\r\n    display: none;\r\n}\r\n\r\n","@import url(\"https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  min-height: 100vh;\n  font-family: \"Sora\", sans-serif;\n}\n\n.none {\n  display: none;\n}\n\n.underline {\n  text-decoration: underline;\n  text-underline-offset: 10px;\n  text-decoration-color: rgb(19, 19, 107);\n  text-decoration-thickness: 3px;\n}\n\n.a-Clicked {\n  font-weight: 600;\n}\n\na {\n  cursor: pointer;\n}\n\nheader {\n  width: 100%;\n}\nheader h1 {\n  height: 120px;\n  background-color: rgb(19, 19, 107);\n  color: white;\n  font-size: 1.75rem;\n  padding: 10px 20px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 700;\n}\nheader .nav {\n  width: 80%;\n  max-width: 400px;\n  height: 70px;\n  margin: 15px auto;\n  justify-content: space-evenly;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n}\nheader a {\n  font-size: 1rem;\n  color: rgb(19, 19, 107);\n}\n\n.flex-column {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.flex-row {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n\n.last-results {\n  padding: 0 15px;\n  margin-top: 2.5rem;\n  gap: 50px;\n}\n.last-results__title {\n  font-size: 1.375rem;\n  color: black;\n  text-align: center;\n  margin-bottom: 50px;\n}\n\n.draw {\n  gap: 20px;\n  margin-bottom: 50px;\n}\n.draw__date {\n  font-size: 0.875rem;\n  color: black;\n}\n.draw__balls {\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.draw__balls-5 {\n  gap: 5px;\n  flex-wrap: wrap;\n}\n.draw__balls-2 {\n  gap: 5px;\n}\n\n.simulator {\n  width: 100%;\n  margin-top: 40px;\n}\n.simulator .menu {\n  padding: 40px;\n  min-height: 250px;\n  width: 80%;\n  max-width: 500px;\n  margin: auto;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  gap: 10px;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n}\n.simulator li:hover {\n  color: rgb(19, 19, 107);\n  font-weight: 600;\n  cursor: pointer;\n}\n\n/* li:hover {\n    text-decoration: 1px solid $blue;\n}  */\n.ball {\n  width: 40px;\n  height: 40px;\n  border-radius: 100px;\n  color: white;\n  font-weight: 700;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.ball--blue {\n  background-color: rgb(19, 19, 107);\n}\n.ball--yellow {\n  background-color: rgb(255, 230, 0);\n}","@import './colors';\r\n\r\n.underline {\r\n    text-decoration: underline;\r\n    text-underline-offset: 10px;\r\n    text-decoration-color: $blue;\r\n    text-decoration-thickness: 3px;\r\n}\r\n\r\n.a-Clicked {\r\n    font-weight: 600;\r\n}\r\n\r\na {\r\n    cursor: pointer;\r\n}","$white: white;\r\n$blue: rgb(19, 19, 107);\r\n$gray: rgba(233, 230, 230, 0.425);\r\n$light-gray: lightgray;\r\n$black: black;\r\n$yellow: rgb(255, 230, 0);","\r\nheader {\r\n    width: 100%;\r\n    h1 {\r\n        height: 120px;\r\n        background-color: $blue;\r\n        color: $white;\r\n        font-size: 1.75rem;\r\n        padding: 10px 20px;\r\n        text-align: center;\r\n        @include flexCenter;\r\n        font-weight: 700;\r\n    }\r\n\r\n    .nav {\r\n        width: 80%;\r\n        max-width: 400px;\r\n        height: 70px;\r\n        margin: 15px auto;\r\n        justify-content: space-evenly;\r\n        @include stylingForBox;\r\n    }\r\n\r\n    a { \r\n        font-size: 1rem;\r\n        color: $blue;\r\n    }\r\n}","@mixin flexCenter {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n@mixin stylingForBox {\r\n    border-radius: 15px;\r\n    box-shadow: 1px 2px 2px $light-gray;\r\n    border: 1px solid $gray;\r\n}","@import '../base/mixins';\r\n\r\n.flex-column {\r\n    @include flexCenter;\r\n    flex-direction: column;\r\n}\r\n\r\n.flex-row {\r\n    @include flexCenter;\r\n    flex-direction: row;\r\n}",".last-results {\r\n    padding: 0 15px;\r\n    margin-top: 2.5rem;\r\n    gap: 50px;\r\n\r\n    &__title {\r\n        font-size: 1.375rem;\r\n        color: $black;\r\n        text-align: center;\r\n        margin-bottom: 50px;\r\n    }\r\n}\r\n\r\n\r\n.draw {\r\n    gap: 20px;\r\n    margin-bottom: 50px;\r\n\r\n    &__date {\r\n        font-size: 0.875rem;\r\n        color: $black;\r\n    }\r\n\r\n    &__balls {\r\n        gap: 10px;\r\n        flex-wrap: wrap;\r\n    }\r\n\r\n    &__balls-5 {\r\n        gap: 5px;\r\n        flex-wrap: wrap;\r\n    }\r\n\r\n    &__balls-2 {\r\n        gap: 5px;\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n","@import '../base/colors';\r\n\r\n.simulator {\r\n    width: 100%;\r\n    margin-top: 40px;\r\n    .menu {\r\n        padding: 40px;\r\n        min-height: 250px;\r\n        width: 80%;\r\n        max-width: 500px;\r\n        margin: auto;\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: center;\r\n        gap: 10px;\r\n        @include stylingForBox;\r\n    }\r\n\r\n    li:hover {\r\n        color: $blue;\r\n        font-weight: 600;\r\n        cursor: pointer;\r\n    }\r\n}\r\n\r\n/* li:hover {\r\n    text-decoration: 1px solid $blue;\r\n}  */","@import '../base/colors';\r\n@import '../base/mixins';\r\n\r\n.ball {\r\n    width: 40px;\r\n    height: 40px;\r\n    border-radius: 100px;\r\n    color: $white;\r\n    font-weight: 700;\r\n    @include flexCenter;\r\n\r\n    &--blue {\r\n        background-color: $blue;\r\n    }\r\n\r\n    &--yellow {\r\n        background-color: $yellow;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -675,4 +707,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=0d524a01caade1adf680.js.map
+//# sourceMappingURL=c5c7d781de62d8befa98.js.map

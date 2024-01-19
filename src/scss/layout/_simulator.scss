@@ -1,0 +1,28 @@
+@import '../base/colors';
+
+.simulator {
+    width: 100%;
+    margin-top: 40px;
+    .menu {
+        padding: 40px;
+        min-height: 250px;
+        width: 80%;
+        max-width: 500px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        @include stylingForBox;
+    }
+
+    li:hover {
+        color: $blue;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+/* li:hover {
+    text-decoration: 1px solid $blue;
+}  */
