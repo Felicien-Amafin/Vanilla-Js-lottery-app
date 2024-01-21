@@ -17,6 +17,7 @@ header {
         max-width: 400px;
         height: 70px;
         margin: 15px auto;
+        @include flex-row;
         justify-content: space-evenly;
         @include stylingForBox;
     }

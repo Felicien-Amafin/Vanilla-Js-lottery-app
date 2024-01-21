@@ -1,0 +1,5 @@
+.keyboard-container {
+    width: 100%;
+    padding: 20px;
+    @include flexCenter;
+}
