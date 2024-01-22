@@ -2,12 +2,18 @@
 @import '../base/mixins';
 
 .ball {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 100px;
     color: $white;
     font-weight: 700;
+    font-size: 0.875rem;
     @include flexCenter;
+    @include breakpoint(medium) {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
 
     &--blue {
         background-color: $blue;

@@ -13,6 +13,8 @@ html {
 body {
     min-height: 100vh;
     font-family: 'Sora', sans-serif;
+    user-select: none;
+    position: relative;
 }
 
 .none {

@@ -3,10 +3,11 @@
 
 .keyboard {
     width: 100%;
-    max-width: 850px;
-    padding: 35px;
-    gap: 50px;
+    padding: 30px;
+    gap: 45px;
     position: relative;
+    z-index: 10000;
+    background-color: $white;
     @include stylingForBox;
     @include flex-column;
     
@@ -60,13 +61,13 @@
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(6, 1fr);
         }
-        @include breakpoint(large) {
+       /*  @include breakpoint(large) {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(4, 1fr);
             row-gap: 20px;
             column-gap: 10px;
-        }
+        } */
     }
 
     &__key {
@@ -81,9 +82,12 @@
         cursor: pointer;
         @include flexCenter;
         list-style: none;
+        &:hover {
+            box-shadow: 2px 3px 2px $keyboard-key-boxShadow;
+        }
         @include breakpoint(medium) {
-            width: 40px;
-            height: 40px;
+            width: 37px;
+            height: 37px;
             font-size: 1rem;
         }
     }
