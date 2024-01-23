@@ -33,91 +33,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="draw">
-                    <h3 id="draw__date" class="draw__date">26/12/2024</h3>
-                    <div class="draw__balls">
-                        <ul id="draw__balls-5" class="draw__balls-5">
-                            <li class="ball ball--blue">15</li>
-                            <li class="ball ball--blue">25</li>
-                            <li class="ball ball--blue">26</li>
-                            <li class="ball ball--blue">35</li>
-                            <li class="ball ball--blue">50</li>
-                        </ul>
-                        <ul id="draw__balls-2" class="draw__balls-2">
-                            <li class="ball ball--yellow">2</li>
-                            <li class="ball ball--yellow">12</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="draw">
-                    <h3 id="draw__date" class="draw__date">26/12/2024</h3>
-                    <div class="draw__balls">
-                        <ul id="draw__balls-5" class="draw__balls-5">
-                            <li class="ball ball--blue">15</li>
-                            <li class="ball ball--blue">25</li>
-                            <li class="ball ball--blue">26</li>
-                            <li class="ball ball--blue">35</li>
-                            <li class="ball ball--blue">50</li>
-                        </ul>
-                        <ul id="draw__balls-2" class="draw__balls-2">
-                            <li class="ball ball--yellow">2</li>
-                            <li class="ball ball--yellow">12</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="draw">
-                    <h3 id="draw__date" class="draw__date">26/12/2024</h3>
-                    <div class="draw__balls">
-                        <ul id="draw__balls-5" class="draw__balls-5">
-                            <li class="ball ball--blue">15</li>
-                            <li class="ball ball--blue">25</li>
-                            <li class="ball ball--blue">26</li>
-                            <li class="ball ball--blue">35</li>
-                            <li class="ball ball--blue">50</li>
-                        </ul>
-                        <ul id="draw__balls-2" class="draw__balls-2">
-                            <li class="ball ball--yellow">2</li>
-                            <li class="ball ball--yellow">12</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="draw">
-                    <h3 id="draw__date" class="draw__date">26/12/2024</h3>
-                    <div class="draw__balls">
-                        <ul id="draw__balls-5" class="draw__balls-5">
-                            <li class="ball ball--blue">15</li>
-                            <li class="ball ball--blue">25</li>
-                            <li class="ball ball--blue">26</li>
-                            <li class="ball ball--blue">35</li>
-                            <li class="ball ball--blue">50</li>
-                        </ul>
-                        <ul id="draw__balls-2" class="draw__balls-2">
-                            <li class="ball ball--yellow">2</li>
-                            <li class="ball ball--yellow">12</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="draw">
-                    <h3 id="draw__date" class="draw__date">26/12/2024</h3>
-                    <div class="draw__balls">
-                        <ul id="draw__balls-5" class="draw__balls-5">
-                            <li class="ball ball--blue">15</li>
-                            <li class="ball ball--blue">25</li>
-                            <li class="ball ball--blue">26</li>
-                            <li class="ball ball--blue">35</li>
-                            <li class="ball ball--blue">50</li>
-                        </ul>
-                        <ul id="draw__balls-2" class="draw__balls-2">
-                            <li class="ball ball--yellow">2</li>
-                            <li class="ball ball--yellow">12</li>
-                        </ul>
-                    </div>
-                </div>
-               
-                
             </section>
         </article>
-        <article id="simulator" class="simulator">
+        <article id="simulator" class="simulator none">
             <ul id="menu" class="menu">
                 <li>Have your numbers already appeared?</li>
                 <li>Numbers and their occurences.</li>
@@ -126,9 +44,8 @@
                 <li>Discover yellow balls duos, top ten.</li>
             </ul>
         </article>
-
-        <div id="overlay" class="overlay">
-            <article id="keyboard-container" class="keyboard-container ">
+        <!-- <div id="overlay" class="overlay">
+            <article id="keyboard-container" class="keyboard-container">
                 <section id="keyboard" class="keyboard">
                     <span id="closing-cross" class="closing-cross closing-cross--keyboard">x</span>
                     <p id="keyboard__instruction" class="keyboard__instruction">Select 5 blue balls and 2 yellow balls</p>
@@ -214,24 +131,35 @@
                     <button id="keyboard__btn" class="keyboard__btn" type="button">ok</button>
                 </section>
             </article>
-        </div>
-    </main>
-    <!-- <template id="balls-k-template">
-        <div id="overlay">
-            <article id="keyboard" class="keyboard">
-                <span id="closing-cross" class="closing-cross">x</span>
-                <div id="keys" class="keys">
-                    <ul id="blue-keys" class="blue-keys">
-                        <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue"></li>
-                    </ul>
-                    <ul id="yellow-keys" class="yellow-keys">
-                        <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow"></li>
-                    </ul>
+        </div> -->
+        <!-- <div class="overlay">
+            <article id="numbers-occurences" class="numbers-occurences">
+                <span id="closing-cross" class="closing-cross closing-cross--occuBoard">x</span>
+                <h2 id="numbers-occurences__title" class="numbers-occurences__title">Occurences Boards</h2>
+                <div id="occurences-boards" class="occurences-boards">
+                    <section class="board board--totalDraw">
+                        <ul class="board__cells">
+                            <li class="board__cell board__cell--blue">Blue balls</li>
+                            <li class="board__cell">Occurences</li>
+                        </ul>
+                        <ul class="board__cells">
+                            <li class="board__cell board__cell--blue">10</li>
+                            <li class="board__cell">32</li>
+                        </ul>
+                    </section>
+                    <section class="board board--totalDraw">
+                        <ul class="board__cells">
+                            <li class="board__cell board__cell--yellow">Yellow balls</li>
+                            <li class="board__cell">Occurences</li>
+                        </ul>
+                        <ul class="board__cells">
+                            <li class="board__cell board__cell--yellow ">1</li>
+                            <li class="board__cell">32</li>
+                        </ul>
+                    </section>
                 </div>
-                <p id="result-config" class="result-config">Lauch draws containing at least numbers from your combination.</p>
-                <button>ok</button>
             </article>
-        </div>
-    </template> -->
+        </div> -->
+    </main>
 </body>
 </html>

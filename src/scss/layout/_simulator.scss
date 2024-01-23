@@ -20,6 +20,10 @@
         }
     }
 
+    li {
+        list-style: disc;
+    }
+
     li:hover {
         color: $blue;
         font-weight: 600;

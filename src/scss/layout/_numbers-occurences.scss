@@ -1,0 +1,44 @@
+.numbers-occurences {
+    width: 90%;
+    position: relative;
+
+    .closing-cross--occuBoard {
+        border: none;
+    }
+    
+    &__title {
+        width: 100%;
+        min-height: 40px;
+        text-align: center;
+        padding: 30px;
+        color: $white;
+        background-color: $blue;
+        font-size: 1.375rem;
+        margin-bottom: 20px;
+        @include breakpoint(medium) {
+            font-size: 1.625rem;
+        }
+        @include breakpoint(x-large) {
+            font-size: 1.875rem;
+        }
+    }
+
+    .occurences-boards {
+        width: 100%;
+        @include flex-column;
+        gap: 20px;
+        @include breakpoint(small) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row: repeat(3, auto);
+        }
+        @include breakpoint(large) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-row: repeat(2, auto);
+        }
+        @include breakpoint(xx-large) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-row: repeat(2, auto);
+        }
+    }
+}

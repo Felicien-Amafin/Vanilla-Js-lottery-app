@@ -1,0 +1,37 @@
+.board {
+    z-index: 10000;
+    background-color: $white;
+    box-shadow: 3px 4px 4px $grey;
+    
+    &--totalDraw {
+        width: 100%;
+
+    }
+
+    &__cells {
+        width: 100%;
+        border-bottom: 1px solid $light-gray;
+        padding: 10px 0;
+        @include flex-row;
+        justify-content: space-evenly;
+    }
+
+    &__cell {
+        text-align: center;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: $black;
+        @include flex-column;
+        @include breakpoint(x-large) {
+            font-size: 1rem;
+        }
+    }
+
+    &__cell--blue {
+        color: $blue;
+    }
+
+    &__cell--yellow {
+        color: $yellow;
+    }
+}

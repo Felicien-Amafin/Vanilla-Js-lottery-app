@@ -4,4 +4,5 @@
     max-width: 800px;
     @include flexCenter;
     z-index: 5000;
+    animation: fade-slide-in 0.7s ease-out forwards;
 }
