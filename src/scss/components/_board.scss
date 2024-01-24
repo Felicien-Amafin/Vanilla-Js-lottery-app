@@ -2,16 +2,12 @@
     z-index: 10000;
     background-color: $white;
     box-shadow: 3px 4px 4px $grey;
-    
-    &--totalDraw {
-        width: 100%;
-
-    }
+    width: 100%;
 
     &__cells {
         width: 100%;
         border-bottom: 1px solid $light-gray;
-        padding: 10px 0;
+        padding: 10px;
         @include flex-row;
         justify-content: space-evenly;
     }
@@ -33,5 +29,6 @@
 
     &__cell--yellow {
         color: $yellow;
+        margin-right: 10px;
     }
 }

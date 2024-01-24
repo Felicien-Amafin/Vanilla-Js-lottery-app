@@ -10,10 +10,6 @@
     background-color: $white;
     @include stylingForBox;
     @include flex-column;
-    
-    .closing-cross--keyboard {
-        box-shadow: 1px 2px 2px $closing-cross-boxShasow;
-    }
 
     &__instruction {
         font-size: 0.875rem;
