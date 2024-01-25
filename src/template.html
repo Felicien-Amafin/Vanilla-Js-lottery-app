@@ -35,12 +35,12 @@
                 </div>
             </section>
         </article>
-        <article id="simulator" class="simulator">
+        <article id="simulator" class="simulator none">
             <ul id="menu" class="menu">
                 <li>Have your numbers already appeared?</li>
                 <li>Numbers and their occurences.</li>
                 <li>Since how many draws your number hasn't appeared?</li>
-                <li>Discover your favorite number's soulmate.</li>
+                <li>Your favorite number's soulmate.</li>
                 <li>Discover the yellow balls duos' top 10</li>
             </ul>
         </article>
@@ -128,7 +128,7 @@
                             <option value="7">7</option>
                         </select>
                         <span> numbers present in your combination.</span></p>
-                    <button id="keyboard__btn" class="keyboard__btn" type="button">ok</button>
+                    <button id="keyboard__btn" class="btn" type="button">ok</button>
                 </section>
             </article>
         </div> -->
@@ -177,6 +177,31 @@
                 </div>
             </article>
         </div> -->
+        <div class="overlay">
+            <article id="num-soulmate" class="num-soulmate">
+                <span id="closing-cross" class="closing-cross closing-cross--board">x</span>
+                <h2 id="num-soulmate__title" class="num-soulmate__title">Your favorite number's soulmate</h2>
+                    <form class="num-soulmate__bubble">
+                        <p class="num-soulmate__instruction">Select your ball color, then enter it's number.</p>
+                        <div id="checkboxes" class="checkboxes">
+                            <div class="checkbox">
+                                <label for="blue-b" class="blue-b" name="ball-color" >Blue ball</label>
+                                <input id="blue-b" type="radio" name="ball-color">
+                            </div>
+                            <div class="checkbox">
+                                <label for="yellow-b" class="yellow-b" name="ball-color" >Yellow ball</label>
+                                <input id="yellow-b" type="radio" name="ball-color" >
+                            </div>
+                        </div>
+                        <div class="number-input">
+                            <input id="num-soulmate__input" class="num-soulmate__input" type="number" name="number-input">
+                            <span>Soulmate: </span>
+                        </div>
+                        <button id="num-soulmate__btn" class="btn" type="button">Search</button>
+                    </form>
+                </div>
+            </article>
+        </div>
     </main>
 </body>
 </html>
