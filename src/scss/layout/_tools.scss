@@ -1,9 +1,8 @@
-@import '../base/colors';
-
-.simulator {
+.tools {
     width: 100%;
     margin-top: 40px;
-    .menu {
+    
+    &__menu {
         padding: 40px;
         min-height: 250px;
         width: 80%;
@@ -13,20 +12,20 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
         @include stylingForBox;
         @include breakpoint(medium) {
             font-size: 1rem;
         }
-    }
-
-    li {
-        list-style: disc;
-    }
-
-    li:hover {
-        color: $blue;
-        font-weight: 600;
-        cursor: pointer;
+    
+        li {
+            list-style: disc;
+        }
+        
+        li:hover {
+            color: $blue;
+            font-weight: 600;
+            cursor: pointer;
+        }
     }
 }

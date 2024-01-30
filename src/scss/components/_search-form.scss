@@ -1,92 +1,78 @@
-.num-soulmate {
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    animation: fade-slide-in 0.7s ease-out forwards;
-
-    &__title {
-        line-height: 32px;
-        @include boardTitle;
-        @include breakpoint(medium) {
-            font-size: 1.375rem;
-        }
-        @include breakpoint(x-large) {
-            font-size: 1.375rem;
-        }
-    }
-
-    &__bubble {
-        min-height: 340px;
-        padding: 20px 30px;
-        @include flex-column;
-        gap: 40px;
-        @include stylingForBox;
-    }
+.search-form {
+    min-height: 340px;
+    padding: 30px;
+    @include flex-column;
+    gap: 40px;
+    @include stylingForBox;
 
     &__instruction {
-        font-size: 14px;
+        font-size: 0.75rem;
         color: $grey;
         text-align: center;
     }
-
-    .checkboxes {
+    
+    &__checkboxes {
         width: 90%;
         @include flex-row;
         gap: 15px;
     }
-
+    
     .checkbox {
         @include flex-row;
         width: 100%;
+    
+        label {
+            font-weight: 600;
+        }
     }
-
-    label {
-        font-weight: 600;
-    }
-
+    
     .blue-b {
         font-size: 1rem;
         color: $blue;
     }
-
+    
     .yellow-b {
         font-size: 1rem;
         color: $yellow;
     }
-
+    
+    &__input {
+        @include flex-row;
+        gap: 10px;
+    }
+    
     .number-input {
         @include flex-row;
-        gap: 40px;
+        gap: 20px;
         width: 100%;
         max-width: 400px;
         height: 40px;
+    
+        label {
+            font-weight: 400;
+            color: $black;
+        }
     }
-
+    
     input {
         width: 100%;
-        max-width: 80px;
+        max-width: 60px;
         height: 100%;
         padding: 10px;
         border: 1px solid $light-gray;
         border-radius: 10px;
     }
-
+    
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
     }
-
+    
     input[type=number] {
     -moz-appearance: textfield;
     }
-
-    span {
-        font-size: 1rem;
-        color: $black;
-        font-weight: 500;
-    }
-
+    
     &__error-mess {
         text-align: center;
         color: $red;
@@ -94,3 +80,4 @@
         font-weight: 400;
     }
 }
+

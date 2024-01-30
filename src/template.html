@@ -14,9 +14,9 @@
         </nav>
     </header>
     <main id="page-container">
-        <article id="last-results" class="last-results none">
+        <!-- <article id="last-results" class="last-results">
             <h2 class="last-results__title">The last fifty draws</h2>
-            <section id="draws" class="draws">
+            <section id="last-results__draws" class="last-results__draws">
                 <div class="draw">
                     <h3 id="draw__date" class="draw__date">26/12/2024</h3>
                     <div class="draw__balls">
@@ -34,92 +34,32 @@
                     </div>
                 </div>
             </section>
-        </article>
-        <article id="simulator" class="simulator none">
-            <ul id="menu" class="menu">
+        </article> -->
+        <!-- <article id="tools" class="tools">
+            <ul id="tools__menu" class="tools__menu">
                 <li>Have your numbers already appeared?</li>
-                <li>Numbers and their occurences.</li>
+                <li>Numbers and their number of appearence.</li>
                 <li>Since how many draws your number hasn't appeared?</li>
-                <li>Your favorite number's soulmate.</li>
-                <li>Discover the yellow balls duos' top 10</li>
+                <li>Which number(s) appear(s) the most with your favorite number?</li>
+                <li>Top 10 of the most frequent yellow balls couples.</li>
             </ul>
-        </article>
+        </article> -->
         <!-- <div id="overlay" class="overlay">
             <article id="keyboard-container" class="keyboard-container">
                 <section id="keyboard" class="keyboard">
-                    <span id="closing-cross" class="closing-cross closing-cross--keyboard">x</span>
-                    <p id="keyboard__instruction" class="keyboard__instruction">Select 5 blue balls and 2 yellow balls</p>
-                    <div id="keys-container" class="keys-container">
-                        <ul id="blue-keys" class="blue-keys">
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
-                            <li id="keyboard__key--blue" class="keyboard__key keyboard__key--blue">10</li>
+                    <span id="keyboard__closing-cross" class="closing-cross closing-cross--keyboard">x</span>
+                    <p id="keyboard__advise" class="keyboard__advise">Select 5 blue balls and 2 yellow balls</p>
+                    <div id="keyboard__keys" class="keyboard__keys">
+                        <ul id="keyboard__blue-keys" class="keyboard__blue-keys">
+                            <li class="keyboard-key keyboard-key--blue">10</li>
                         </ul>
-                        <ul id="yellow-keys" class="yellow-keys">
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
-                            <li id="keyboard__key--yellow" class="keyboard__key keyboard__key--yellow">5</li>
+                        <ul id="keyboard__yellow-keys" class="keyboard__yellow-keys">
+                            <li class="keyboard-key keyboard-key--yellow">5</li>
                         </ul>
                     </div>
-                    <p id="keyboard__result-config" class="keyboard__result-config">
+                    <p id="keyboard__config" class="keyboard__config">
                         <span>Load draws containing at least </span>
-                        <select id="keyboard__select" class="keyboard__select"type="select" name="numbers">
+                        <select id="drowpDownInput" class="drowpDownInput"type="select" name="numbers">
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
@@ -127,20 +67,21 @@
                             <option value="6">6</option>
                             <option value="7">7</option>
                         </select>
-                        <span> numbers present in your combination.</span></p>
+                        <span> numbers present in your combination.</span>
+                    </p>
                     <button id="keyboard__btn" class="btn" type="button">ok</button>
                 </section>
             </article>
         </div> -->
         <!-- <div class="overlay">
-            <article id="numbers-occurences" class="numbers-occurences">
-                <span id="closing-cross" class="closing-cross closing-cross--board">x</span>
-                <h2 id="numbers-occurences__title" class="numbers-occurences__title">Occurences Boards</h2>
-                <div id="occurences-boards" class="occurences-boards">
+            <article id="ranking-board" class="ranking-board">
+                <span id="reanking-board__closing-cross" class="closing-cross closing-cross--banner">x</span>
+                <h2 id="ranking-board__title" class="blue-banner">Numbers and their number of appearence</h2>
+                <div id="ranking-board__boards" class="ranking-board__boards">
                     <section class="board">
                         <ul class="board__cells">
                             <li class="board__cell board__cell--blue">Blue balls</li>
-                            <li class="board__cell">Occurences</li>
+                            <li class="board__cell">Nbr of appearence</li>
                         </ul>
                         <ul class="board__cells">
                             <li class="board__cell board__cell--blue">10</li>
@@ -150,7 +91,7 @@
                     <section class="board">
                         <ul class="board__cells">
                             <li class="board__cell board__cell--yellow">Yellow balls</li>
-                            <li class="board__cell">Occurences</li>
+                            <li class="board__cell">Nbr of appearence</li>
                         </ul>
                         <ul class="board__cells">
                             <li class="board__cell board__cell--yellow ">1</li>
@@ -161,13 +102,13 @@
             </article>
         </div> -->
         <!-- <div class="overlay">
-            <article id="yellowBs-top10" class="yellowBs-top10">
-                <span id="closing-cross" class="closing-cross closing-cross--board">x</span>
-                <h2 id="yellowBs-top10__title" class="yellowBs-top10__title">The yellow balls duos' top 10</h2>
+            <article id="top10" class="top10">
+                <span id="top10__closing-cross" class="closing-cross closing-cross--banner">x</span>
+                <h2 id="top10__title" class="blue-banner">Yellow balls couples top 10</h2>
                     <section class="board">
                         <ul class="board__cells">
-                            <li class="board__cell board__cell--yellow">Yellow balls duos</li>
-                            <li class="board__cell">Occurences</li>
+                            <li class="board__cell board__cell--yellow">Yellow balls couple</li>
+                            <li class="board__cell">Nbr of appearence</li>
                         </ul>
                         <ul class="board__cells">
                             <li class="board__cell board__cell--yellow">5-10</li>
@@ -177,31 +118,108 @@
                 </div>
             </article>
         </div> -->
+        <!-- <div class="overlay">
+            <article id="search-handler" class="search-handler">
+                <span id="search-handler__closing-cross" class="closing-cross closing-cross--banner">x</span>
+                <h2 id="search-handler__title" class="blue-banner blue-banner--med ">Find your favorite number best(s) friend(s)</h2>
+                <form class="search-form">
+                    <p class="search-form__instruction">Select your ball color, then enter it's number.</p>
+                    <div id="search-form__checkboxes" class="search-form__checkboxes">
+                        <div class="checkbox">
+                            <label for="blue-b" class="blue-b" name="ball-color" >Blue ball</label>
+                            <input id="blue-b" type="radio" name="ball-color">
+                        </div>
+                        <div class="checkbox">
+                            <label for="yellow-b" class="yellow-b" name="ball-color" >Yellow ball</label>
+                            <input id="yellow-b" type="radio" name="ball-color" >
+                        </div>
+                    </div>
+                    <div class="search-form__input">
+                        <label for="num-input">Enter number:</label>
+                        <input id="num-input" class="num-input" type="number" name="num-input">
+                    </div>
+                    <button id="search-form__btn" class="btn" type="button">Search</button>
+                </form>
+            </article>
+        </div> -->
+    </main>
+    <!-- <template>
         <div class="overlay">
-            <article id="num-soulmate" class="num-soulmate">
-                <span id="closing-cross" class="closing-cross closing-cross--board">x</span>
-                <h2 id="num-soulmate__title" class="num-soulmate__title">Your favorite number's soulmate</h2>
-                    <form class="num-soulmate__bubble">
-                        <p class="num-soulmate__instruction">Select your ball color, then enter it's number.</p>
-                        <div id="checkboxes" class="checkboxes">
-                            <div class="checkbox">
-                                <label for="blue-b" class="blue-b" name="ball-color" >Blue ball</label>
-                                <input id="blue-b" type="radio" name="ball-color">
-                            </div>
-                            <div class="checkbox">
-                                <label for="yellow-b" class="yellow-b" name="ball-color" >Yellow ball</label>
-                                <input id="yellow-b" type="radio" name="ball-color" >
-                            </div>
-                        </div>
-                        <div class="number-input">
-                            <input id="num-soulmate__input" class="num-soulmate__input" type="number" name="number-input">
-                            <span>Soulmate: </span>
-                        </div>
-                        <button id="num-soulmate__btn" class="btn" type="button">Search</button>
-                    </form>
-                </div>
+            <article id="feedback" class="feedback">
+                <span id="feedback__closing-cross" class="closing-cross closing-cross--banner">x</span>
+                <h2 id="feedback__title" class="blue-banner blue-banner--med">Numbers appearences</h2>
+                    <div id="feedback__bubble" class="feedback__bubble feedback__bubble--message">
+                        <p id="message" class="message"></p>
+                    </div>
             </article>
         </div>
-    </main>
+    </template> -->
+   <!--  <template>
+        <div class="overlay">
+            <article id="feedback" class="feedback">
+                <span id="feedback__closing-cross" class="closing-cross closing-cross--banner">x</span>
+                <h2 id="feedback__title" class="blue-banner blue-banner--med">Numbers appearences</h2>
+                    <div id="feedback__bubble" class="feedback__bubble feedback__bubble--message">
+                        <div class="draw">
+                            <h3 id="draw__date" class="draw__date">26/12/2024</h3>
+                            <div class="draw__balls">
+                                <ul id="draw__balls-5" class="draw__balls-5">
+                                    <li class="ball ball--blue">15</li>
+                                    <li class="ball ball--blue">25</li>
+                                    <li class="ball ball--blue">26</li>
+                                    <li class="ball ball--blue">35</li>
+                                    <li class="ball ball--blue">50</li>
+                                </ul>
+                                <ul id="draw__balls-2" class="draw__balls-2">
+                                    <li class="ball ball--yellow">2</li>
+                                    <li class="ball ball--yellow">12</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </article>
+        </div>
+    </template> -->  
+    <!-- <template id="feedback__numBestFriends">
+        <div class="overlay">
+            <article id="feedback" class="feedback">
+                <span id="feedback__closing-cross" class="closing-cross closing-cross--banner">x</span>
+                <h2 id="feedback__title" class="blue-banner blue-banner--med">Favorite number best(s) friend(s)</h2>
+                    <div id="feedback__bubble" class="feedback__bubble feedback__bubble--numBestFriends">
+                        <div id="num" class="num">
+                            <span>Number: </span>
+                            <span id="favorite__num" class="ball ball--blue">1</span>
+                        </div>
+                        <div id="result-declaration" class="result-declaration">
+                            <span>Appeared</span>
+                            <span id="result-declaration__num">11</span> 
+                            <span class="nowrap">times with number(s):</span>
+                        </div>
+                        <ul class="result__list">
+                            <li class="ball ball--blue">2</li>
+                        </ul>
+                    </div>
+            </article>
+        </div>
+    </template>
+    <template id="feedback__drawLate">
+        <div class="overlay">
+            <article id="feedback" class="feedback">
+                <span id="feedback__closing-cross" class="closing-cross closing-cross--banner">x</span>
+                <h2 id="feedback__title" class="blue-banner blue-banner--med">How many draws late?</h2>
+                    <div id="feedback__bubble" class="feedback__bubble">
+                        <div id="num" class="num">
+                            <span>Number:</span>
+                            <span id="num-sought" class="ball ball--blue">1</span>
+                        </div>
+                        <div id="result-declaration" class="result-declaration">
+                            <span>hasn't appeared since</span>
+                            <span id="result-declaration">11</span> 
+                            <span>draws.</span> 
+                        </div>
+                    </div>
+            </article>
+        </div>
+    </template> -->
 </body>
 </html>

@@ -1,12 +1,7 @@
-.numbers-occurences {
-    width: 90%;
-    position: relative;
+.ranking-board {
+    @include genericContainer;
 
-    &__title {
-        @include boardTitle;
-    }
-
-    .occurences-boards {
+    &__boards {
         width: 100%;
         @include flex-column;
         gap: 20px;

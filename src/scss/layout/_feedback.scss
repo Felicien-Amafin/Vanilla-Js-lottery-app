@@ -1,0 +1,62 @@
+.feedback {
+    @include genericContainer;
+    max-width: 400px;
+
+    &__bubble {
+        width: 100%;
+        min-height: 200px;
+        padding: 30px;
+        background-color: $white;
+        @include flex-column;
+        @include stylingForBox;
+        gap: 30px;
+
+        .num {
+            @include flex-row;
+            gap: 5px;
+        }
+
+        span {
+            margin-right: 5px;
+            font-size: 0.875rem;
+            @include breakpoint(medium) {
+                font-size: 1rem;
+            }
+        }
+
+        .result-declaration {
+            @include flex-row;
+            flex-wrap: wrap;
+            .nowrap {
+                text-wrap:nowrap;
+            }
+        }
+    }
+
+    &__bubble--numBestFriends {
+
+        .result__list {
+            @include flex-row;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+    }
+
+    &__bubble--numAppearences {
+        min-height: 150px;
+        max-height: 420px;
+        overflow-y: scroll;
+        justify-content: flex-start;
+    }
+
+    &__bubble--message {
+        min-height: 150px;
+        color: $blue;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-align: center;
+        @include breakpoint(medium) {
+            font-size: 1rem;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.keyboard-key {
+    width: 35px;
+    height: 35px;
+    font-weight: 600;
+    box-shadow: 3px 4px 3px $keyboard-key-boxShadow;
+    border-radius: 100%;
+    border: 1px solid $keyboard-key-border;
+    background-color: $white;
+    font-size: 0.875rem;
+    cursor: pointer;
+    @include flexCenter;
+    list-style: none;
+    &:hover {
+        box-shadow: 2px 3px 2px $keyboard-key-boxShadow;
+    }
+    @include breakpoint(medium) {
+        width: 37px;
+        height: 37px;
+        font-size: 1rem;
+    }
+
+    &--blue {
+        color: $blue;
+    }
+
+    &--yellow {
+        color: $yellow;
+    }
+
+    &--blue:hover {
+        color: $blue-transparent;
+    }
+
+    &--yellow:hover {
+        color: $yellow-transparent;
+    }
+
+    &__clicked--blue {
+        color: $white;
+        background-color: $blue;
+    }
+
+    &__clicked--yellow {
+        color: $white;
+        background-color: $yellow;
+    }
+}
