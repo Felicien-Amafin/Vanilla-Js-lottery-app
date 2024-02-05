@@ -1,6 +1,7 @@
 $white: white;
 $blue: rgb(19, 19, 107);
 $blue-transparent: rgba(19, 19, 107, 0.699);
+$blue-disabled: rgba(19, 19, 107, 0.473);
 /* $gray: rgba(233, 230, 230, 0.425); */
 $gray: rgba(233, 230, 230, 0.425);
 $light-gray: lightgray;
@@ -8,9 +9,12 @@ $black: rgb(34, 33, 33);
 $red: red;
 $yellow: rgb(255, 217, 0);
 $yellow-transparent: rgba(255, 230, 0, 0.63);
+$yellow-disabled: rgba(255, 230, 0, 0.5);
 $grey: grey;
 $keyboard-key-border: rgb(245, 243, 243);
 $keyboard-key-boxShadow: rgb(228, 226, 226);
 $closing-cross-border: rgb(245, 245, 245);
 $closing-cross-boxShasow: rgb(247, 246, 246);
 $overlay:rgba(118, 118, 160, 0.301);
+$btn-disabled: rgba(19, 19, 107, 0.562);
+$darkBlue: rgb(8, 8, 58);

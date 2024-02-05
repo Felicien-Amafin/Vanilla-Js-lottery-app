@@ -13,35 +13,58 @@
     &:hover {
         box-shadow: 2px 3px 2px $keyboard-key-boxShadow;
     }
-    @include breakpoint(medium) {
-        width: 37px;
-        height: 37px;
+    @include breakpoint(xx-large) {
+        width: 40px;
+        height: 40px;
         font-size: 1rem;
     }
 
     &--blue {
         color: $blue;
+        &:hover {
+            color: $blue-transparent;
+        }
     }
 
     &--yellow {
         color: $yellow;
-    }
-
-    &--blue:hover {
-        color: $blue-transparent;
-    }
-
-    &--yellow:hover {
-        color: $yellow-transparent;
+        &:hover {
+            color: $yellow-transparent;
+        }
     }
 
     &__clicked--blue {
         color: $white;
         background-color: $blue;
+        border: none;
+        box-shadow: none;
+        &:hover {
+            color:$white
+        }
     }
 
     &__clicked--yellow {
         color: $white;
         background-color: $yellow;
+        border: none;
+        box-shadow: none;
+        &:hover {
+            color:$white
+        }
+    }
+    
+    &__disabled--blue {
+        color: $blue-disabled;
+        &:hover {
+            color: $blue-disabled;
+            box-shadow: 3px 4px 3px $keyboard-key-boxShadow;
+        }
+    }
+    &__disabled--yellow {
+        color: $yellow-disabled;
+        &:hover {
+            color: $yellow-disabled;
+            box-shadow: 3px 4px 3px $keyboard-key-boxShadow;
+        }
     }
 }
