@@ -9,28 +9,23 @@ export class Draw {
         draw.classList.add('draw');
         draw.id = drawObj.id;
         draw.innerHTML = `
-        <h3 id="draw__date" class="draw__date">${drawObj.date}</h3>
+        <h3 class="draw__date">${drawObj.date}</h3>
             <div class="draw__balls">
-                <ul class="draw__balls-5">
+                <ul class="draw__balls-blue">
                 </ul>
-                <ul class="draw__balls-2">
+                <ul class="draw__balls-yellow">
                 </ul>
             </div>
         `
         document.getElementById(`${this.parentNodeId}`).insertAdjacentElement('beforeend', draw);
-        this.renderBalls(drawObj.blueBalls, draw.id, 'blue');
-        this.renderBalls(drawObj.yellowBalls, draw.id, 'yellow');
+        this.addBalls('blue', drawObj.blueBalls, draw.id)
+        this.addBalls('yellow', drawObj.yellowBalls, draw.id)
     }
-    renderBalls(ballsToRender, parentNodeId, ballColor) {
-        let ballsContainer;
-        const parentNode = document.getElementById(`${parentNodeId}`)
-        if(ballColor === 'blue') { 
-            ballsContainer = parentNode.querySelector('.draw__balls-5');
-        } else if(ballColor === 'yellow') { 
-            ballsContainer = parentNode.querySelector('.draw__balls-2');
-        }
-        ballsToRender.forEach((ball)=> {
-            ballsContainer.insertAdjacentHTML('beforeend', `<li class="ball ball--${ballColor}"> ${ball} </li>`);
-        });
+    addBalls(color, ballsArray, drawId) {
+        const draw = document.getElementById(`${drawId}`);
+        const ballContainer = draw.querySelector(`.draw__balls-${color}`);
+        ballsArray.forEach((ball)=> {
+            ballContainer.insertAdjacentHTML('beforeend', `<li class="ball ball--${color}">${ball}</li>`)
+        })
     }
 }

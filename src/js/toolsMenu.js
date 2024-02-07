@@ -2,7 +2,7 @@ import { Keyboard } from "./keyboard";
 
 export class ToolsMenu {
     static arrayFunc = [
-        Keyboard.display
+        Keyboard.displayHandler
     ];
     
     static addClickListeners() {

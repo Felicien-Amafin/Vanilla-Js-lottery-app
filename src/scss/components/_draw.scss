@@ -16,13 +16,13 @@
         flex-wrap: wrap;
     }
 
-    &__balls-5 {
+    &__balls-blue {
         @include flex-row;
         gap: 5px;
         flex-wrap: wrap;
     }
 
-    &__balls-2 {
+    &__balls-yellow {
         @include flex-row;
         gap: 5px;
     }

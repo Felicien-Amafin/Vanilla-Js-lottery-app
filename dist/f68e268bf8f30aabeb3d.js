@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss":
@@ -7,7 +8,6 @@
   \*********************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -22,7 +22,9 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `/* \$gray: rgba(233, 230, 230, 0.425); */
+___CSS_LOADER_EXPORT___.push([module.id, `/* \$blue-transparent: rgba(19, 19, 107, 0.699); */
+/* \$yellow-transparent: rgba(255, 230, 0, 0.63); */
+/* \$overlay:rgba(118, 118, 160, 0.301); */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -68,7 +70,9 @@ li {
     transform: translateY(0);
   }
 }
-/* \$gray: rgba(233, 230, 230, 0.425); */
+/* \$blue-transparent: rgba(19, 19, 107, 0.699); */
+/* \$yellow-transparent: rgba(255, 230, 0, 0.63); */
+/* \$overlay:rgba(118, 118, 160, 0.301); */
 header {
   width: 100%;
 }
@@ -329,7 +333,7 @@ header a {
   position: absolute;
   top: 0;
   min-height: 100vh;
-  background-color: rgba(118, 118, 160, 0.301);
+  background-color: rgba(57, 57, 114, 0.438);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -347,7 +351,7 @@ header a {
   width: 90%;
   position: relative;
   animation: fade-slide-in 0.6s ease-out forwards;
-  max-width: 400px;
+  max-width: 450px;
 }
 .feedback__bubble {
   width: 100%;
@@ -364,31 +368,21 @@ header a {
   background-color: white;
   gap: 30px;
 }
-.feedback__bubble .num {
+.feedback__bubble--numBestFriends .num {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 5px;
 }
-.feedback__bubble span {
+.feedback__bubble--numBestFriends span {
   margin-right: 5px;
   font-size: 0.875rem;
 }
 @media (min-width: 48rem) {
-  .feedback__bubble span {
+  .feedback__bubble--numBestFriends span {
     font-size: 1rem;
   }
-}
-.feedback__bubble .result-declaration {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.feedback__bubble .result-declaration .nowrap {
-  text-wrap: nowrap;
 }
 .feedback__bubble--numBestFriends .result__list {
   display: flex;
@@ -398,21 +392,56 @@ header a {
   flex-wrap: wrap;
   gap: 10px;
 }
-.feedback__bubble--numAppearences {
+.feedback__bubble--drawGap .num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+}
+.feedback__bubble--drawGap span {
+  margin-right: 5px;
+  font-size: 0.875rem;
+}
+@media (min-width: 48rem) {
+  .feedback__bubble--drawGap span {
+    font-size: 1rem;
+  }
+}
+.feedback__bubble--drawGap .result-declaration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.feedback__bubble--drawGap .result-declaration .nowrap {
+  text-wrap: nowrap;
+}
+.feedback__bubble--drawHistory {
+  padding: 30px 15px;
   min-height: 150px;
   max-height: 420px;
-  overflow-y: scroll;
-  justify-content: flex-start;
 }
-.feedback__bubble--message {
-  min-height: 150px;
+.feedback__bubble--drawHistory .innerScreen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+  overflow-y: scroll;
+}
+.feedback__bubble--drawHistory .innerScreen__message {
   color: rgb(19, 19, 107);
   font-size: 0.875rem;
   font-weight: 600;
   text-align: center;
 }
 @media (min-width: 48rem) {
-  .feedback__bubble--message {
+  .feedback__bubble--drawHistory .innerScreen__message {
     font-size: 1rem;
   }
 }
@@ -441,7 +470,7 @@ header a {
   gap: 10px;
   flex-wrap: wrap;
 }
-.draw__balls-5 {
+.draw__balls-blue {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -449,7 +478,7 @@ header a {
   gap: 5px;
   flex-wrap: wrap;
 }
-.draw__balls-2 {
+.draw__balls-yellow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -457,7 +486,9 @@ header a {
   gap: 5px;
 }
 
-/* \$gray: rgba(233, 230, 230, 0.425); */
+/* \$blue-transparent: rgba(19, 19, 107, 0.699); */
+/* \$yellow-transparent: rgba(255, 230, 0, 0.63); */
+/* \$overlay:rgba(118, 118, 160, 0.301); */
 .ball {
   width: 35px;
   height: 35px;
@@ -481,6 +512,12 @@ header a {
 }
 .ball--yellow {
   background-color: rgb(255, 217, 0);
+}
+.ball--transparent-blue {
+  background-color: rgba(19, 19, 107, 0.493);
+}
+.ball--transparent-yellow {
+  background-color: rgba(255, 230, 0, 0.459);
 }
 
 .keyboard-key {
@@ -512,13 +549,13 @@ header a {
   color: rgb(19, 19, 107);
 }
 .keyboard-key--blue:hover {
-  color: rgba(19, 19, 107, 0.699);
+  color: rgba(19, 19, 107, 0.493);
 }
 .keyboard-key--yellow {
   color: rgb(255, 217, 0);
 }
 .keyboard-key--yellow:hover {
-  color: rgba(255, 230, 0, 0.63);
+  color: rgba(255, 230, 0, 0.459);
 }
 .keyboard-key__clicked--blue {
   color: white;
@@ -575,7 +612,7 @@ header a {
   box-shadow: 1px 2px 2px rgb(247, 246, 246);
 }
 .closing-cross:hover {
-  color: rgba(19, 19, 107, 0.699);
+  color: rgba(19, 19, 107, 0.493);
   cursor: pointer;
 }
 
@@ -749,6 +786,7 @@ header a {
   background-color: rgb(19, 19, 107);
   font-size: 1.375rem;
   margin-bottom: 20px;
+  border-radius: 15px;
   line-height: 38px;
 }
 @media (min-width: 48rem) {
@@ -765,7 +803,7 @@ header a {
   .blue-banner--med {
     font-size: 1.625rem;
   }
-}`, "",{"version":3,"sources":["webpack://./src/scss/base/_colors.scss","webpack://./src/scss/base/_base.scss","webpack://./src/scss/main.scss","webpack://./src/scss/layout/_header.scss","webpack://./src/scss/base/_mixins.scss","webpack://./src/scss/layout/_last-results.scss","webpack://./src/scss/layout/_keyboard-container.scss","webpack://./src/scss/layout/_keyboard.scss","webpack://./src/scss/layout/_ranking-boards.scss","webpack://./src/scss/layout/_top10.scss","webpack://./src/scss/layout/_tools.scss","webpack://./src/scss/layout/_overlay.scss","webpack://./src/scss/layout/_search-handler.scss","webpack://./src/scss/layout/_feedback.scss","webpack://./src/scss/components/_draw.scss","webpack://./src/scss/components/_balls.scss","webpack://./src/scss/components/_keyboard-key.scss","webpack://./src/scss/components/_closing-cross.scss","webpack://./src/scss/components/_board.scss","webpack://./src/scss/components/_btn.scss","webpack://./src/scss/components/_search-form.scss","webpack://./src/scss/components/_dropDownInput.scss","webpack://./src/scss/components/_blue-banner.scss"],"names":[],"mappings":"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","sourcesContent":["$white: white;\r\n$blue: rgb(19, 19, 107);\r\n$blue-transparent: rgba(19, 19, 107, 0.699);\r\n$blue-disabled: rgba(19, 19, 107, 0.473);\r\n/* $gray: rgba(233, 230, 230, 0.425); */\r\n$gray: rgba(233, 230, 230, 0.425);\r\n$light-gray: lightgray;\r\n$black: rgb(34, 33, 33);\r\n$red: red;\r\n$yellow: rgb(255, 217, 0);\r\n$yellow-transparent: rgba(255, 230, 0, 0.63);\r\n$yellow-disabled: rgba(255, 230, 0, 0.5);\r\n$grey: grey;\r\n$keyboard-key-border: rgb(245, 243, 243);\r\n$keyboard-key-boxShadow: rgb(228, 226, 226);\r\n$closing-cross-border: rgb(245, 245, 245);\r\n$closing-cross-boxShasow: rgb(247, 246, 246);\r\n$overlay:rgba(118, 118, 160, 0.301);\r\n$btn-disabled: rgba(19, 19, 107, 0.562);\r\n$darkBlue: rgb(8, 8, 58);","@import './colors';\r\n\r\n// Font\r\n@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');\r\n\r\n// Resets\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    min-height: 100vh;\r\n    font-family: 'Sora', sans-serif;\r\n    user-select: none;\r\n    position: relative;\r\n}\r\n\r\n.none {\r\n    display: none;\r\n}\r\n\r\n//typography\r\n.selected {\r\n    text-decoration: underline;\r\n    text-underline-offset: 10px;\r\n    text-decoration-color: $blue;\r\n    text-decoration-thickness: 3px;\r\n    font-weight: 600;\r\n}\r\n\r\na {\r\n    cursor: pointer;\r\n}\r\n\r\nli {\r\n    list-style: none;\r\n}\r\n\r\n// Animations\r\n@keyframes fade-slide-in {\r\n    from {\r\n        transform: translateY(-5rem);\r\n    }\r\n    to {\r\n        transform: translateY(0);\r\n    }\r\n    }\r\n","/* $gray: rgba(233, 230, 230, 0.425); */\n@import url(\"https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  min-height: 100vh;\n  font-family: \"Sora\", sans-serif;\n  user-select: none;\n  position: relative;\n}\n\n.none {\n  display: none;\n}\n\n.selected {\n  text-decoration: underline;\n  text-underline-offset: 10px;\n  text-decoration-color: rgb(19, 19, 107);\n  text-decoration-thickness: 3px;\n  font-weight: 600;\n}\n\na {\n  cursor: pointer;\n}\n\nli {\n  list-style: none;\n}\n\n@keyframes fade-slide-in {\n  from {\n    transform: translateY(-5rem);\n  }\n  to {\n    transform: translateY(0);\n  }\n}\n/* $gray: rgba(233, 230, 230, 0.425); */\nheader {\n  width: 100%;\n}\nheader h1 {\n  height: 120px;\n  background-color: rgb(19, 19, 107);\n  color: white;\n  font-size: 1.5rem;\n  padding: 10px 20px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 700;\n}\n@media (min-width: 36rem) {\n  header h1 {\n    font-size: 28px;\n  }\n}\n@media (min-width: 48rem) {\n  header h1 {\n    font-size: 2.25rem;\n  }\n}\n@media (min-width: 75rem) {\n  header h1 {\n    font-size: 2.5rem;\n  }\n}\nheader .nav {\n  width: 80%;\n  max-width: 400px;\n  height: 70px;\n  margin: 15px auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  justify-content: space-evenly;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  background-color: white;\n}\nheader a {\n  font-size: 1rem;\n  color: rgb(19, 19, 107);\n}\n\n.last-results {\n  padding: 0 15px;\n  margin-top: 2.5rem;\n  gap: 50px;\n}\n.last-results__title {\n  font-size: 1.375rem;\n  color: rgb(34, 33, 33);\n  text-align: center;\n  margin-bottom: 50px;\n}\n@media (min-width: 48rem) {\n  .last-results__title {\n    font-size: 1.5rem;\n  }\n}\n@media (min-width: 75rem) {\n  .last-results__title {\n    font-size: 1.625rem;\n  }\n}\n.last-results__draws {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 50px;\n}\n\n.keyboard-container {\n  width: 100%;\n  padding: 20px;\n  max-width: 800px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 5000;\n  animation: fade-slide-in 0.7s ease-out forwards;\n}\n\n.keyboard {\n  width: 100%;\n  padding: 40px;\n  gap: 40px;\n  position: relative;\n  z-index: 10000;\n  background-color: white;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  background-color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n.keyboard__advise {\n  font-size: 0.875rem;\n  font-weight: 400;\n  color: grey;\n  margin-right: 20px;\n  text-align: center;\n}\n@media (min-width: 48rem) {\n  .keyboard__advise {\n    font-size: 1rem;\n  }\n}\n.keyboard__keys {\n  flex-wrap: wrap;\n  gap: 35px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n@media (min-width: 48rem) {\n  .keyboard__keys {\n    display: grid;\n    grid-template-columns: auto auto;\n    grid-template-rows: auto;\n  }\n}\n.keyboard__blue-keys {\n  flex-wrap: wrap;\n  row-gap: 20px;\n  column-gap: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n@media (min-width: 48rem) {\n  .keyboard__blue-keys {\n    display: grid;\n    grid-template-columns: repeat(10, 1fr);\n    grid-template-rows: repeat(5, 1fr);\n  }\n}\n.keyboard__yellow-keys {\n  flex-wrap: wrap;\n  column-gap: 10px;\n  row-gap: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n@media (min-width: 48rem) {\n  .keyboard__yellow-keys {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    grid-template-rows: repeat(4, 1fr);\n    row-gap: 20px;\n    column-gap: 10px;\n  }\n}\n.keyboard__config {\n  font-size: 0.875rem;\n  color: rgb(34, 33, 33);\n  max-width: 400px;\n  text-align: center;\n  line-height: 24px;\n  font-size: 0.875rem;\n}\n@media (min-width: 48rem) {\n  .keyboard__config {\n    font-size: 1rem;\n  }\n}\n\n.ranking-boards {\n  width: 90%;\n  position: relative;\n  animation: fade-slide-in 0.6s ease-out forwards;\n}\n.ranking-boards__boards {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 20px;\n}\n@media (min-width: 36rem) {\n  .ranking-boards__boards {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    grid-row: repeat(3, auto);\n  }\n}\n@media (min-width: 62rem) {\n  .ranking-boards__boards {\n    grid-template-columns: repeat(4, 1fr);\n    grid-row: repeat(2, auto);\n  }\n}\n@media (min-width: 87.5rem) {\n  .ranking-boards__boards {\n    grid-template-columns: repeat(4, 1fr);\n    grid-row: repeat(2, auto);\n  }\n}\n\n.top10 {\n  width: 90%;\n  position: relative;\n  animation: fade-slide-in 0.6s ease-out forwards;\n  max-width: 700px;\n}\n\n.tools {\n  width: 100%;\n  margin-top: 40px;\n}\n.tools__menu {\n  padding: 40px;\n  min-height: 250px;\n  width: 80%;\n  max-width: 500px;\n  margin: auto;\n  font-size: 0.875rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  gap: 15px;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  background-color: white;\n}\n@media (min-width: 48rem) {\n  .tools__menu {\n    font-size: 1rem;\n  }\n}\n.tools__menu li {\n  list-style: disc;\n}\n.tools__menu li:hover {\n  color: rgb(19, 19, 107);\n  font-weight: 600;\n  cursor: pointer;\n}\n\n.overlay {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  min-height: 100vh;\n  background-color: rgba(118, 118, 160, 0.301);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.search-handler {\n  width: 90%;\n  position: relative;\n  animation: fade-slide-in 0.6s ease-out forwards;\n  max-width: 500px;\n}\n\n.feedback {\n  width: 90%;\n  position: relative;\n  animation: fade-slide-in 0.6s ease-out forwards;\n  max-width: 400px;\n}\n.feedback__bubble {\n  width: 100%;\n  min-height: 200px;\n  padding: 30px;\n  background-color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  background-color: white;\n  gap: 30px;\n}\n.feedback__bubble .num {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 5px;\n}\n.feedback__bubble span {\n  margin-right: 5px;\n  font-size: 0.875rem;\n}\n@media (min-width: 48rem) {\n  .feedback__bubble span {\n    font-size: 1rem;\n  }\n}\n.feedback__bubble .result-declaration {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n.feedback__bubble .result-declaration .nowrap {\n  text-wrap: nowrap;\n}\n.feedback__bubble--numBestFriends .result__list {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  flex-wrap: wrap;\n  gap: 10px;\n}\n.feedback__bubble--numAppearences {\n  min-height: 150px;\n  max-height: 420px;\n  overflow-y: scroll;\n  justify-content: flex-start;\n}\n.feedback__bubble--message {\n  min-height: 150px;\n  color: rgb(19, 19, 107);\n  font-size: 0.875rem;\n  font-weight: 600;\n  text-align: center;\n}\n@media (min-width: 48rem) {\n  .feedback__bubble--message {\n    font-size: 1rem;\n  }\n}\n\n.draw {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 20px;\n}\n.draw__date {\n  font-size: 0.875rem;\n  color: rgb(34, 33, 33);\n}\n@media (min-width: 48rem) {\n  .draw__date {\n    font-size: 1rem;\n  }\n}\n.draw__balls {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.draw__balls-5 {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 5px;\n  flex-wrap: wrap;\n}\n.draw__balls-2 {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 5px;\n}\n\n/* $gray: rgba(233, 230, 230, 0.425); */\n.ball {\n  width: 35px;\n  height: 35px;\n  border-radius: 100px;\n  color: white;\n  font-weight: 700;\n  font-size: 0.875rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media (min-width: 48rem) {\n  .ball {\n    width: 40px;\n    height: 40px;\n    font-size: 1rem;\n  }\n}\n.ball--blue {\n  background-color: rgb(19, 19, 107);\n}\n.ball--yellow {\n  background-color: rgb(255, 217, 0);\n}\n\n.keyboard-key {\n  width: 35px;\n  height: 35px;\n  font-weight: 600;\n  box-shadow: 3px 4px 3px rgb(228, 226, 226);\n  border-radius: 100%;\n  border: 1px solid rgb(245, 243, 243);\n  background-color: white;\n  font-size: 0.875rem;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  list-style: none;\n}\n.keyboard-key:hover {\n  box-shadow: 2px 3px 2px rgb(228, 226, 226);\n}\n@media (min-width: 87.5rem) {\n  .keyboard-key {\n    width: 40px;\n    height: 40px;\n    font-size: 1rem;\n  }\n}\n.keyboard-key--blue {\n  color: rgb(19, 19, 107);\n}\n.keyboard-key--blue:hover {\n  color: rgba(19, 19, 107, 0.699);\n}\n.keyboard-key--yellow {\n  color: rgb(255, 217, 0);\n}\n.keyboard-key--yellow:hover {\n  color: rgba(255, 230, 0, 0.63);\n}\n.keyboard-key__clicked--blue {\n  color: white;\n  background-color: rgb(19, 19, 107);\n  border: none;\n  box-shadow: none;\n}\n.keyboard-key__clicked--blue:hover {\n  color: white;\n}\n.keyboard-key__clicked--yellow {\n  color: white;\n  background-color: rgb(255, 217, 0);\n  border: none;\n  box-shadow: none;\n}\n.keyboard-key__clicked--yellow:hover {\n  color: white;\n}\n.keyboard-key__disabled--blue {\n  color: rgba(19, 19, 107, 0.473);\n}\n.keyboard-key__disabled--blue:hover {\n  color: rgba(19, 19, 107, 0.473);\n  box-shadow: 3px 4px 3px rgb(228, 226, 226);\n}\n.keyboard-key__disabled--yellow {\n  color: rgba(255, 230, 0, 0.5);\n}\n.keyboard-key__disabled--yellow:hover {\n  color: rgba(255, 230, 0, 0.5);\n  box-shadow: 3px 4px 3px rgb(228, 226, 226);\n}\n\n.closing-cross {\n  width: 25px;\n  height: 25px;\n  font-size: 0.875rem;\n  border-radius: 100%;\n  border: 1px solid lightgray;\n  background-color: white;\n  position: absolute;\n  top: 7px;\n  right: 12px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n.closing-cross--banner {\n  border: none;\n}\n.closing-cross--keyboard {\n  box-shadow: 1px 2px 2px rgb(247, 246, 246);\n}\n.closing-cross:hover {\n  color: rgba(19, 19, 107, 0.699);\n  cursor: pointer;\n}\n\n.board {\n  z-index: 10000;\n  background-color: white;\n  box-shadow: 3px 4px 4px grey;\n  width: 100%;\n}\n.board__cells {\n  width: 100%;\n  border-bottom: 1px solid lightgray;\n  padding: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  justify-content: space-evenly;\n}\n.board__cell {\n  width: 100%;\n  font-size: 0.875rem;\n  font-weight: 600;\n  color: rgb(34, 33, 33);\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n@media (min-width: 75rem) {\n  .board__cell {\n    font-size: 1rem;\n  }\n}\n.board__cell--blue {\n  color: rgb(19, 19, 107);\n}\n.board__cell--yellow {\n  color: rgb(255, 217, 0);\n  margin-right: 10px;\n}\n\n.btn {\n  width: 90px;\n  height: 40px;\n  border: none;\n  border-radius: 30px;\n  font-size: 0.875rem;\n  font-weight: 600;\n  color: white;\n  cursor: pointer;\n}\n@media (min-width: 48rem) {\n  .btn {\n    font-size: 1rem;\n    width: 100px;\n  }\n}\n.btn--enabled {\n  background-color: rgb(19, 19, 107);\n}\n.btn--enabled:hover {\n  background-color: rgb(8, 8, 58);\n}\n.btn--disabled {\n  background-color: rgba(19, 19, 107, 0.562);\n}\n\n.search-form {\n  min-height: 340px;\n  padding: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 40px;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  background-color: white;\n}\n.search-form__instruction {\n  font-size: 0.75rem;\n  color: grey;\n  text-align: center;\n}\n.search-form__checkboxes {\n  width: 90%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 15px;\n}\n.search-form .checkbox {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  width: 100%;\n}\n.search-form .checkbox label {\n  font-weight: 600;\n}\n.search-form .blue-b {\n  font-size: 1rem;\n  color: rgb(19, 19, 107);\n}\n.search-form .yellow-b {\n  font-size: 1rem;\n  color: rgb(255, 217, 0);\n}\n.search-form__input {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 10px;\n}\n.search-form .number-input {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 20px;\n  width: 100%;\n  max-width: 400px;\n  height: 40px;\n}\n.search-form .number-input label {\n  font-weight: 400;\n  color: rgb(34, 33, 33);\n}\n.search-form input {\n  width: 100%;\n  max-width: 60px;\n  height: 100%;\n  padding: 10px;\n  border: 1px solid lightgray;\n  border-radius: 10px;\n}\n.search-form input::-webkit-outer-spin-button,\n.search-form input::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n.search-form input[type=number] {\n  -moz-appearance: textfield;\n}\n.search-form__error-mess {\n  text-align: center;\n  color: red;\n  font-size: 0.75rem;\n  font-weight: 400;\n}\n\n.drowpDownInput {\n  border: 1px solid rgb(19, 19, 107);\n  border-radius: 4px;\n  padding: 3px;\n  background-color: white;\n}\n\n.blue-banner {\n  width: 100%;\n  min-height: 40px;\n  text-align: center;\n  padding: 30px;\n  color: white;\n  background-color: rgb(19, 19, 107);\n  font-size: 1.375rem;\n  margin-bottom: 20px;\n  line-height: 38px;\n}\n@media (min-width: 48rem) {\n  .blue-banner {\n    font-size: 1.625rem;\n  }\n}\n@media (min-width: 75rem) {\n  .blue-banner {\n    font-size: 1.875rem;\n  }\n}\n@media (min-width: 48rem) {\n  .blue-banner--med {\n    font-size: 1.625rem;\n  }\n}","\r\nheader {\r\n    width: 100%;\r\n    h1 {\r\n        height: 120px;\r\n        background-color: $blue;\r\n        color: $white;\r\n        font-size: 1.5rem;\r\n        padding: 10px 20px;\r\n        text-align: center;\r\n        @include flexCenter;\r\n        font-weight: 700;\r\n        @include breakpoint(small) {\r\n            font-size: 28px;\r\n        }\r\n        @include breakpoint(medium) {\r\n            font-size: 2.25rem;\r\n        }\r\n        @include breakpoint(x-large) {\r\n            font-size: 2.5rem;\r\n        }\r\n    }\r\n\r\n    .nav {\r\n        width: 80%;\r\n        max-width: 400px;\r\n        height: 70px;\r\n        margin: 15px auto;\r\n        @include flex-row;\r\n        justify-content: space-evenly;\r\n        @include stylingForBox;\r\n    }\r\n\r\n    a { \r\n        font-size: 1rem;\r\n        color: $blue;\r\n    }\r\n}","$breakpoints: (\r\n    'small': '36rem', // ≥576px\r\n    'small-medium': '42rem', // ≥676px\r\n    'medium': '48rem', // ≥768px\r\n    'large': '62rem', // ≥992p\r\n    'x-large': '75rem', // ≥1200px\r\n    'xx-large': '87.5rem', // ≥1400px\r\n);\r\n\r\n@mixin breakpoint($size) {\r\n\t@media (min-width: map-get($breakpoints, $size)) {\r\n\t\t@content;\r\n\t}\r\n}\r\n\r\n@mixin flexCenter {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n@mixin stylingForBox {\r\n    border-radius: 15px;\r\n    box-shadow: 1px 2px 2px $light-gray;\r\n    border: 1px solid $gray;\r\n    background-color: $white;\r\n}\r\n\r\n@mixin flex-column {\r\n    @include flexCenter;\r\n    flex-direction: column;\r\n}\r\n\r\n@mixin flex-row {\r\n    @include flexCenter;\r\n    flex-direction: row;\r\n}\r\n\r\n@mixin genericContainer {\r\n    width: 90%;\r\n    position: relative;\r\n    animation: fade-slide-in 0.6s ease-out forwards;\r\n}",".last-results {\r\n    padding: 0 15px;\r\n    margin-top: 2.5rem;\r\n    gap: 50px;\r\n\r\n    &__title {\r\n        font-size: 1.375rem;\r\n        color: $black;\r\n        text-align: center;\r\n        margin-bottom: 50px;\r\n        @include breakpoint(medium) {\r\n            font-size: 1.5rem;\r\n        }\r\n        @include breakpoint(x-large) {\r\n            font-size: 1.625rem;\r\n        }\r\n    }\r\n\r\n    &__draws {\r\n        @include flex-column;\r\n        gap: 50px;\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n",".keyboard-container {\r\n    width: 100%;\r\n    padding: 20px;\r\n    max-width: 800px;\r\n    @include flexCenter;\r\n    z-index: 5000;\r\n    animation: fade-slide-in 0.7s ease-out forwards;\r\n}\r\n\r\n",".keyboard {\r\n    width: 100%;\r\n    padding: 40px;\r\n    gap: 40px;\r\n    position: relative;\r\n    z-index: 10000;\r\n    background-color: $white;\r\n    @include stylingForBox;\r\n    @include flex-column;\r\n\r\n    &__advise {\r\n        font-size: 0.875rem;\r\n        font-weight: 400;\r\n        color: $grey;\r\n        margin-right: 20px;\r\n        text-align: center;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__keys {\r\n        flex-wrap: wrap;\r\n        gap: 35px;\r\n        @include flex-row;\r\n        @include breakpoint(medium) {\r\n            display: grid;\r\n            grid-template-columns: auto auto;\r\n            grid-template-rows: auto;\r\n        }\r\n    }\r\n\r\n    &__blue-keys {\r\n        flex-wrap: wrap;\r\n        row-gap: 20px;\r\n        column-gap: 10px;\r\n        @include flex-row;\r\n        @include breakpoint(medium) {\r\n            display: grid;\r\n            grid-template-columns: repeat(10, 1fr);\r\n            grid-template-rows: repeat(5, 1fr);\r\n        }\r\n    }\r\n\r\n    &__yellow-keys {\r\n        flex-wrap: wrap;\r\n        column-gap:10px;\r\n        row-gap: 20px;\r\n        @include flex-row;\r\n        @include breakpoint(medium) {\r\n            display: grid;\r\n            grid-template-columns: repeat(3, 1fr);\r\n            grid-template-rows: repeat(4, 1fr);\r\n            row-gap: 20px;\r\n            column-gap: 10px;\r\n        }\r\n    }\r\n\r\n    &__config {\r\n        font-size: 0.875rem;\r\n        color: $black;\r\n        max-width: 400px;\r\n        text-align: center;\r\n        line-height: 24px;\r\n        font-size: 0.875rem;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n}",".ranking-boards {\r\n    @include genericContainer;\r\n\r\n    &__boards {\r\n        width: 100%;\r\n        @include flex-column;\r\n        gap: 20px;\r\n        @include breakpoint(small) {\r\n            display: grid;\r\n            grid-template-columns: repeat(2, 1fr);\r\n            grid-row: repeat(3, auto);\r\n        }\r\n        @include breakpoint(large) {\r\n            grid-template-columns: repeat(4, 1fr);\r\n            grid-row: repeat(2, auto);\r\n        }\r\n        @include breakpoint(xx-large) {\r\n            grid-template-columns: repeat(4, 1fr);\r\n            grid-row: repeat(2, auto);\r\n        }\r\n    }\r\n}\r\n",".top10 {\r\n    @include genericContainer;\r\n    max-width: 700px;\r\n}",".tools {\r\n    width: 100%;\r\n    margin-top: 40px;\r\n    \r\n    &__menu {\r\n        padding: 40px;\r\n        min-height: 250px;\r\n        width: 80%;\r\n        max-width: 500px;\r\n        margin: auto;\r\n        font-size: 0.875rem;\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: center;\r\n        gap: 15px;\r\n        @include stylingForBox;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    \r\n        li {\r\n            list-style: disc;\r\n        }\r\n        \r\n        li:hover {\r\n            color: $blue;\r\n            font-weight: 600;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n}",".overlay {\r\n    width: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    min-height: 100vh;\r\n    background-color: $overlay;\r\n    @include flex-column;\r\n}",".search-handler {\r\n    @include genericContainer;\r\n    max-width: 500px;\r\n}",".feedback {\r\n    @include genericContainer;\r\n    max-width: 400px;\r\n\r\n    &__bubble {\r\n        width: 100%;\r\n        min-height: 200px;\r\n        padding: 30px;\r\n        background-color: $white;\r\n        @include flex-column;\r\n        @include stylingForBox;\r\n        gap: 30px;\r\n\r\n        .num {\r\n            @include flex-row;\r\n            gap: 5px;\r\n        }\r\n\r\n        span {\r\n            margin-right: 5px;\r\n            font-size: 0.875rem;\r\n            @include breakpoint(medium) {\r\n                font-size: 1rem;\r\n            }\r\n        }\r\n\r\n        .result-declaration {\r\n            @include flex-row;\r\n            flex-wrap: wrap;\r\n            .nowrap {\r\n                text-wrap:nowrap;\r\n            }\r\n        }\r\n    }\r\n\r\n    &__bubble--numBestFriends {\r\n\r\n        .result__list {\r\n            @include flex-row;\r\n            flex-wrap: wrap;\r\n            gap: 10px;\r\n        }\r\n    }\r\n\r\n    &__bubble--numAppearences {\r\n        min-height: 150px;\r\n        max-height: 420px;\r\n        overflow-y: scroll;\r\n        justify-content: flex-start;\r\n    }\r\n\r\n    &__bubble--message {\r\n        min-height: 150px;\r\n        color: $blue;\r\n        font-size: 0.875rem;\r\n        font-weight: 600;\r\n        text-align: center;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n}",".draw {\r\n    @include flex-column;\r\n    gap: 20px;\r\n\r\n    &__date {\r\n        font-size: 0.875rem;\r\n        color: $black;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__balls {\r\n        @include flex-row;\r\n        gap: 10px;\r\n        flex-wrap: wrap;\r\n    }\r\n\r\n    &__balls-5 {\r\n        @include flex-row;\r\n        gap: 5px;\r\n        flex-wrap: wrap;\r\n    }\r\n\r\n    &__balls-2 {\r\n        @include flex-row;\r\n        gap: 5px;\r\n    }\r\n}","@import '../base/colors';\r\n@import '../base/mixins';\r\n\r\n.ball {\r\n    width: 35px;\r\n    height: 35px;\r\n    border-radius: 100px;\r\n    color: $white;\r\n    font-weight: 700;\r\n    font-size: 0.875rem;\r\n    @include flexCenter;\r\n    @include breakpoint(medium) {\r\n        width: 40px;\r\n        height: 40px;\r\n        font-size: 1rem;\r\n    }\r\n\r\n    &--blue {\r\n        background-color: $blue;\r\n    }\r\n\r\n    &--yellow {\r\n        background-color: $yellow;\r\n    }\r\n}",".keyboard-key {\r\n    width: 35px;\r\n    height: 35px;\r\n    font-weight: 600;\r\n    box-shadow: 3px 4px 3px $keyboard-key-boxShadow;\r\n    border-radius: 100%;\r\n    border: 1px solid $keyboard-key-border;\r\n    background-color: $white;\r\n    font-size: 0.875rem;\r\n    cursor: pointer;\r\n    @include flexCenter;\r\n    list-style: none;\r\n    &:hover {\r\n        box-shadow: 2px 3px 2px $keyboard-key-boxShadow;\r\n    }\r\n    @include breakpoint(xx-large) {\r\n        width: 40px;\r\n        height: 40px;\r\n        font-size: 1rem;\r\n    }\r\n\r\n    &--blue {\r\n        color: $blue;\r\n        &:hover {\r\n            color: $blue-transparent;\r\n        }\r\n    }\r\n\r\n    &--yellow {\r\n        color: $yellow;\r\n        &:hover {\r\n            color: $yellow-transparent;\r\n        }\r\n    }\r\n\r\n    &__clicked--blue {\r\n        color: $white;\r\n        background-color: $blue;\r\n        border: none;\r\n        box-shadow: none;\r\n        &:hover {\r\n            color:$white\r\n        }\r\n    }\r\n\r\n    &__clicked--yellow {\r\n        color: $white;\r\n        background-color: $yellow;\r\n        border: none;\r\n        box-shadow: none;\r\n        &:hover {\r\n            color:$white\r\n        }\r\n    }\r\n    \r\n    &__disabled--blue {\r\n        color: $blue-disabled;\r\n        &:hover {\r\n            color: $blue-disabled;\r\n            box-shadow: 3px 4px 3px $keyboard-key-boxShadow;\r\n        }\r\n    }\r\n    &__disabled--yellow {\r\n        color: $yellow-disabled;\r\n        &:hover {\r\n            color: $yellow-disabled;\r\n            box-shadow: 3px 4px 3px $keyboard-key-boxShadow;\r\n        }\r\n    }\r\n}",".closing-cross {\r\n    width: 25px;\r\n    height: 25px;\r\n    font-size: 0.875rem;\r\n    border-radius: 100%;\r\n    border: 1px solid $light-gray;\r\n    background-color: $white;\r\n    position: absolute;\r\n    top: 7px;\r\n    right: 12px;\r\n    @include flex-column;\r\n\r\n    &--banner {\r\n        border: none;\r\n    }\r\n\r\n    &--keyboard {\r\n        box-shadow: 1px 2px 2px $closing-cross-boxShasow;\r\n    }\r\n\r\n    &:hover {\r\n        color:$blue-transparent;\r\n        cursor: pointer;\r\n    }\r\n}\r\n\r\n\r\n",".board {\r\n    z-index: 10000;\r\n    background-color: $white;\r\n    box-shadow: 3px 4px 4px $grey;\r\n    width: 100%;\r\n\r\n    &__cells {\r\n        width: 100%;\r\n        border-bottom: 1px solid $light-gray;\r\n        padding: 10px;\r\n        @include flex-row;\r\n        justify-content: space-evenly;\r\n    }\r\n\r\n    &__cell {\r\n        width: 100%;\r\n        font-size: 0.875rem;\r\n        font-weight: 600;\r\n        color: $black;\r\n        text-align: center;\r\n        @include flex-row;\r\n        @include breakpoint(x-large) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__cell--blue {\r\n        color: $blue;\r\n    }\r\n\r\n    &__cell--yellow {\r\n        color: $yellow;\r\n        margin-right: 10px;\r\n        \r\n    }\r\n}",".btn {\r\n    width: 90px;\r\n    height: 40px;\r\n    border: none;\r\n    border-radius: 30px;\r\n    font-size: 0.875rem;\r\n    font-weight: 600;\r\n    color: $white;\r\n    cursor: pointer;\r\n    @include breakpoint(medium) {\r\n        font-size: 1rem;\r\n        width: 100px;\r\n    }\r\n    &--enabled {\r\n        background-color: $blue;\r\n        &:hover {\r\n            background-color: $darkBlue;\r\n        }\r\n    }\r\n    &--disabled {\r\n        background-color: $btn-disabled;\r\n    }\r\n}",".search-form {\r\n    min-height: 340px;\r\n    padding: 30px;\r\n    @include flex-column;\r\n    gap: 40px;\r\n    @include stylingForBox;\r\n\r\n    &__instruction {\r\n        font-size: 0.75rem;\r\n        color: $grey;\r\n        text-align: center;\r\n    }\r\n    \r\n    &__checkboxes {\r\n        width: 90%;\r\n        @include flex-row;\r\n        gap: 15px;\r\n    }\r\n    \r\n    .checkbox {\r\n        @include flex-row;\r\n        width: 100%;\r\n    \r\n        label {\r\n            font-weight: 600;\r\n        }\r\n    }\r\n    \r\n    .blue-b {\r\n        font-size: 1rem;\r\n        color: $blue;\r\n    }\r\n    \r\n    .yellow-b {\r\n        font-size: 1rem;\r\n        color: $yellow;\r\n    }\r\n    \r\n    &__input {\r\n        @include flex-row;\r\n        gap: 10px;\r\n    }\r\n    \r\n    .number-input {\r\n        @include flex-row;\r\n        gap: 20px;\r\n        width: 100%;\r\n        max-width: 400px;\r\n        height: 40px;\r\n    \r\n        label {\r\n            font-weight: 400;\r\n            color: $black;\r\n        }\r\n    }\r\n    \r\n    input {\r\n        width: 100%;\r\n        max-width: 60px;\r\n        height: 100%;\r\n        padding: 10px;\r\n        border: 1px solid $light-gray;\r\n        border-radius: 10px;\r\n    }\r\n    \r\n    input::-webkit-outer-spin-button,\r\n    input::-webkit-inner-spin-button {\r\n    -webkit-appearance: none;\r\n    margin: 0;\r\n    }\r\n    \r\n    input[type=number] {\r\n    -moz-appearance: textfield;\r\n    }\r\n    \r\n    &__error-mess {\r\n        text-align: center;\r\n        color: $red;\r\n        font-size: 0.75rem;\r\n        font-weight: 400;\r\n    }\r\n}\r\n\r\n",".drowpDownInput {\r\n    border: 1px solid $blue;\r\n    border-radius: 4px;\r\n    padding: 3px;\r\n    background-color: $white;\r\n}",".blue-banner {\r\n    width: 100%;\r\n    min-height: 40px;\r\n    text-align: center;\r\n    padding: 30px;\r\n    color: $white;\r\n    background-color: $blue;\r\n    font-size: 1.375rem;\r\n    margin-bottom: 20px;\r\n    line-height: 38px;\r\n    @include breakpoint(medium) {\r\n        font-size: 1.625rem;\r\n    }\r\n    @include breakpoint(x-large) {\r\n        font-size: 1.875rem;\r\n    }\r\n\r\n    &--med {\r\n        @include breakpoint(medium) {\r\n            font-size: 1.625rem;\r\n        }\r\n    }\r\n}\r\n    "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/scss/base/_colors.scss","webpack://./src/scss/base/_base.scss","webpack://./src/scss/main.scss","webpack://./src/scss/layout/_header.scss","webpack://./src/scss/base/_mixins.scss","webpack://./src/scss/layout/_last-results.scss","webpack://./src/scss/layout/_keyboard-container.scss","webpack://./src/scss/layout/_keyboard.scss","webpack://./src/scss/layout/_ranking-boards.scss","webpack://./src/scss/layout/_top10.scss","webpack://./src/scss/layout/_tools.scss","webpack://./src/scss/layout/_overlay.scss","webpack://./src/scss/layout/_search-handler.scss","webpack://./src/scss/layout/_feedback.scss","webpack://./src/scss/components/_draw.scss","webpack://./src/scss/components/_balls.scss","webpack://./src/scss/components/_keyboard-key.scss","webpack://./src/scss/components/_closing-cross.scss","webpack://./src/scss/components/_board.scss","webpack://./src/scss/components/_btn.scss","webpack://./src/scss/components/_search-form.scss","webpack://./src/scss/components/_dropDownInput.scss","webpack://./src/scss/components/_blue-banner.scss"],"names":[],"mappings":"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","sourcesContent":["$white: white;\r\n$blue: rgb(19, 19, 107);\r\n/* $blue-transparent: rgba(19, 19, 107, 0.699); */\r\n$blue-transparent: rgba(19, 19, 107, 0.493);\r\n$blue-disabled: rgba(19, 19, 107, 0.473);\r\n$gray: rgba(233, 230, 230, 0.425);\r\n$light-gray: lightgray;\r\n$black: rgb(34, 33, 33);\r\n$red: red;\r\n$yellow: rgb(255, 217, 0);\r\n/* $yellow-transparent: rgba(255, 230, 0, 0.63); */\r\n$yellow-transparent: rgba(255, 230, 0, 0.459);\r\n$yellow-disabled: rgba(255, 230, 0, 0.5);\r\n$grey: grey;\r\n$keyboard-key-border: rgb(245, 243, 243);\r\n$keyboard-key-boxShadow: rgb(228, 226, 226);\r\n$closing-cross-border: rgb(245, 245, 245);\r\n$closing-cross-boxShasow: rgb(247, 246, 246);\r\n/* $overlay:rgba(118, 118, 160, 0.301); */\r\n$overlay:rgba(57, 57, 114, 0.438);\r\n$btn-disabled: rgba(19, 19, 107, 0.562);\r\n$darkBlue: rgb(8, 8, 58);","@import './colors';\r\n\r\n// Font\r\n@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');\r\n\r\n// Resets\r\n* {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\nbody {\r\n    min-height: 100vh;\r\n    font-family: 'Sora', sans-serif;\r\n    user-select: none;\r\n    position: relative;\r\n}\r\n\r\n.none {\r\n    display: none;\r\n}\r\n\r\n//typography\r\n.selected {\r\n    text-decoration: underline;\r\n    text-underline-offset: 10px;\r\n    text-decoration-color: $blue;\r\n    text-decoration-thickness: 3px;\r\n    font-weight: 600;\r\n}\r\n\r\na {\r\n    cursor: pointer;\r\n}\r\n\r\nli {\r\n    list-style: none;\r\n}\r\n\r\n// Animations\r\n@keyframes fade-slide-in {\r\n    from {\r\n        transform: translateY(-5rem);\r\n    }\r\n    to {\r\n        transform: translateY(0);\r\n    }\r\n    }\r\n","/* $blue-transparent: rgba(19, 19, 107, 0.699); */\n/* $yellow-transparent: rgba(255, 230, 0, 0.63); */\n/* $overlay:rgba(118, 118, 160, 0.301); */\n@import url(\"https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap\");\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml {\n  font-size: 100%;\n}\n\nbody {\n  min-height: 100vh;\n  font-family: \"Sora\", sans-serif;\n  user-select: none;\n  position: relative;\n}\n\n.none {\n  display: none;\n}\n\n.selected {\n  text-decoration: underline;\n  text-underline-offset: 10px;\n  text-decoration-color: rgb(19, 19, 107);\n  text-decoration-thickness: 3px;\n  font-weight: 600;\n}\n\na {\n  cursor: pointer;\n}\n\nli {\n  list-style: none;\n}\n\n@keyframes fade-slide-in {\n  from {\n    transform: translateY(-5rem);\n  }\n  to {\n    transform: translateY(0);\n  }\n}\n/* $blue-transparent: rgba(19, 19, 107, 0.699); */\n/* $yellow-transparent: rgba(255, 230, 0, 0.63); */\n/* $overlay:rgba(118, 118, 160, 0.301); */\nheader {\n  width: 100%;\n}\nheader h1 {\n  height: 120px;\n  background-color: rgb(19, 19, 107);\n  color: white;\n  font-size: 1.5rem;\n  padding: 10px 20px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 700;\n}\n@media (min-width: 36rem) {\n  header h1 {\n    font-size: 28px;\n  }\n}\n@media (min-width: 48rem) {\n  header h1 {\n    font-size: 2.25rem;\n  }\n}\n@media (min-width: 75rem) {\n  header h1 {\n    font-size: 2.5rem;\n  }\n}\nheader .nav {\n  width: 80%;\n  max-width: 400px;\n  height: 70px;\n  margin: 15px auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  justify-content: space-evenly;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  background-color: white;\n}\nheader a {\n  font-size: 1rem;\n  color: rgb(19, 19, 107);\n}\n\n.last-results {\n  padding: 0 15px;\n  margin-top: 2.5rem;\n  gap: 50px;\n}\n.last-results__title {\n  font-size: 1.375rem;\n  color: rgb(34, 33, 33);\n  text-align: center;\n  margin-bottom: 50px;\n}\n@media (min-width: 48rem) {\n  .last-results__title {\n    font-size: 1.5rem;\n  }\n}\n@media (min-width: 75rem) {\n  .last-results__title {\n    font-size: 1.625rem;\n  }\n}\n.last-results__draws {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 50px;\n}\n\n.keyboard-container {\n  width: 100%;\n  padding: 20px;\n  max-width: 800px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 5000;\n  animation: fade-slide-in 0.7s ease-out forwards;\n}\n\n.keyboard {\n  width: 100%;\n  padding: 40px;\n  gap: 40px;\n  position: relative;\n  z-index: 10000;\n  background-color: white;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  background-color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n.keyboard__advise {\n  font-size: 0.875rem;\n  font-weight: 400;\n  color: grey;\n  margin-right: 20px;\n  text-align: center;\n}\n@media (min-width: 48rem) {\n  .keyboard__advise {\n    font-size: 1rem;\n  }\n}\n.keyboard__keys {\n  flex-wrap: wrap;\n  gap: 35px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n@media (min-width: 48rem) {\n  .keyboard__keys {\n    display: grid;\n    grid-template-columns: auto auto;\n    grid-template-rows: auto;\n  }\n}\n.keyboard__blue-keys {\n  flex-wrap: wrap;\n  row-gap: 20px;\n  column-gap: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n@media (min-width: 48rem) {\n  .keyboard__blue-keys {\n    display: grid;\n    grid-template-columns: repeat(10, 1fr);\n    grid-template-rows: repeat(5, 1fr);\n  }\n}\n.keyboard__yellow-keys {\n  flex-wrap: wrap;\n  column-gap: 10px;\n  row-gap: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n@media (min-width: 48rem) {\n  .keyboard__yellow-keys {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    grid-template-rows: repeat(4, 1fr);\n    row-gap: 20px;\n    column-gap: 10px;\n  }\n}\n.keyboard__config {\n  font-size: 0.875rem;\n  color: rgb(34, 33, 33);\n  max-width: 400px;\n  text-align: center;\n  line-height: 24px;\n  font-size: 0.875rem;\n}\n@media (min-width: 48rem) {\n  .keyboard__config {\n    font-size: 1rem;\n  }\n}\n\n.ranking-boards {\n  width: 90%;\n  position: relative;\n  animation: fade-slide-in 0.6s ease-out forwards;\n}\n.ranking-boards__boards {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 20px;\n}\n@media (min-width: 36rem) {\n  .ranking-boards__boards {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    grid-row: repeat(3, auto);\n  }\n}\n@media (min-width: 62rem) {\n  .ranking-boards__boards {\n    grid-template-columns: repeat(4, 1fr);\n    grid-row: repeat(2, auto);\n  }\n}\n@media (min-width: 87.5rem) {\n  .ranking-boards__boards {\n    grid-template-columns: repeat(4, 1fr);\n    grid-row: repeat(2, auto);\n  }\n}\n\n.top10 {\n  width: 90%;\n  position: relative;\n  animation: fade-slide-in 0.6s ease-out forwards;\n  max-width: 700px;\n}\n\n.tools {\n  width: 100%;\n  margin-top: 40px;\n}\n.tools__menu {\n  padding: 40px;\n  min-height: 250px;\n  width: 80%;\n  max-width: 500px;\n  margin: auto;\n  font-size: 0.875rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  gap: 15px;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  background-color: white;\n}\n@media (min-width: 48rem) {\n  .tools__menu {\n    font-size: 1rem;\n  }\n}\n.tools__menu li {\n  list-style: disc;\n}\n.tools__menu li:hover {\n  color: rgb(19, 19, 107);\n  font-weight: 600;\n  cursor: pointer;\n}\n\n.overlay {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  min-height: 100vh;\n  background-color: rgba(57, 57, 114, 0.438);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.search-handler {\n  width: 90%;\n  position: relative;\n  animation: fade-slide-in 0.6s ease-out forwards;\n  max-width: 500px;\n}\n\n.feedback {\n  width: 90%;\n  position: relative;\n  animation: fade-slide-in 0.6s ease-out forwards;\n  max-width: 450px;\n}\n.feedback__bubble {\n  width: 100%;\n  min-height: 200px;\n  padding: 30px;\n  background-color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  background-color: white;\n  gap: 30px;\n}\n.feedback__bubble--numBestFriends .num {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 5px;\n}\n.feedback__bubble--numBestFriends span {\n  margin-right: 5px;\n  font-size: 0.875rem;\n}\n@media (min-width: 48rem) {\n  .feedback__bubble--numBestFriends span {\n    font-size: 1rem;\n  }\n}\n.feedback__bubble--numBestFriends .result__list {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  flex-wrap: wrap;\n  gap: 10px;\n}\n.feedback__bubble--drawGap .num {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 5px;\n}\n.feedback__bubble--drawGap span {\n  margin-right: 5px;\n  font-size: 0.875rem;\n}\n@media (min-width: 48rem) {\n  .feedback__bubble--drawGap span {\n    font-size: 1rem;\n  }\n}\n.feedback__bubble--drawGap .result-declaration {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n.feedback__bubble--drawGap .result-declaration .nowrap {\n  text-wrap: nowrap;\n}\n.feedback__bubble--drawHistory {\n  padding: 30px 15px;\n  min-height: 150px;\n  max-height: 420px;\n}\n.feedback__bubble--drawHistory .innerScreen {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  justify-content: flex-start;\n  gap: 40px;\n  overflow-y: scroll;\n}\n.feedback__bubble--drawHistory .innerScreen__message {\n  color: rgb(19, 19, 107);\n  font-size: 0.875rem;\n  font-weight: 600;\n  text-align: center;\n}\n@media (min-width: 48rem) {\n  .feedback__bubble--drawHistory .innerScreen__message {\n    font-size: 1rem;\n  }\n}\n\n.draw {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 20px;\n}\n.draw__date {\n  font-size: 0.875rem;\n  color: rgb(34, 33, 33);\n}\n@media (min-width: 48rem) {\n  .draw__date {\n    font-size: 1rem;\n  }\n}\n.draw__balls {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.draw__balls-blue {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 5px;\n  flex-wrap: wrap;\n}\n.draw__balls-yellow {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 5px;\n}\n\n/* $blue-transparent: rgba(19, 19, 107, 0.699); */\n/* $yellow-transparent: rgba(255, 230, 0, 0.63); */\n/* $overlay:rgba(118, 118, 160, 0.301); */\n.ball {\n  width: 35px;\n  height: 35px;\n  border-radius: 100px;\n  color: white;\n  font-weight: 700;\n  font-size: 0.875rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media (min-width: 48rem) {\n  .ball {\n    width: 40px;\n    height: 40px;\n    font-size: 1rem;\n  }\n}\n.ball--blue {\n  background-color: rgb(19, 19, 107);\n}\n.ball--yellow {\n  background-color: rgb(255, 217, 0);\n}\n.ball--transparent-blue {\n  background-color: rgba(19, 19, 107, 0.493);\n}\n.ball--transparent-yellow {\n  background-color: rgba(255, 230, 0, 0.459);\n}\n\n.keyboard-key {\n  width: 35px;\n  height: 35px;\n  font-weight: 600;\n  box-shadow: 3px 4px 3px rgb(228, 226, 226);\n  border-radius: 100%;\n  border: 1px solid rgb(245, 243, 243);\n  background-color: white;\n  font-size: 0.875rem;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  list-style: none;\n}\n.keyboard-key:hover {\n  box-shadow: 2px 3px 2px rgb(228, 226, 226);\n}\n@media (min-width: 87.5rem) {\n  .keyboard-key {\n    width: 40px;\n    height: 40px;\n    font-size: 1rem;\n  }\n}\n.keyboard-key--blue {\n  color: rgb(19, 19, 107);\n}\n.keyboard-key--blue:hover {\n  color: rgba(19, 19, 107, 0.493);\n}\n.keyboard-key--yellow {\n  color: rgb(255, 217, 0);\n}\n.keyboard-key--yellow:hover {\n  color: rgba(255, 230, 0, 0.459);\n}\n.keyboard-key__clicked--blue {\n  color: white;\n  background-color: rgb(19, 19, 107);\n  border: none;\n  box-shadow: none;\n}\n.keyboard-key__clicked--blue:hover {\n  color: white;\n}\n.keyboard-key__clicked--yellow {\n  color: white;\n  background-color: rgb(255, 217, 0);\n  border: none;\n  box-shadow: none;\n}\n.keyboard-key__clicked--yellow:hover {\n  color: white;\n}\n.keyboard-key__disabled--blue {\n  color: rgba(19, 19, 107, 0.473);\n}\n.keyboard-key__disabled--blue:hover {\n  color: rgba(19, 19, 107, 0.473);\n  box-shadow: 3px 4px 3px rgb(228, 226, 226);\n}\n.keyboard-key__disabled--yellow {\n  color: rgba(255, 230, 0, 0.5);\n}\n.keyboard-key__disabled--yellow:hover {\n  color: rgba(255, 230, 0, 0.5);\n  box-shadow: 3px 4px 3px rgb(228, 226, 226);\n}\n\n.closing-cross {\n  width: 25px;\n  height: 25px;\n  font-size: 0.875rem;\n  border-radius: 100%;\n  border: 1px solid lightgray;\n  background-color: white;\n  position: absolute;\n  top: 7px;\n  right: 12px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n.closing-cross--banner {\n  border: none;\n}\n.closing-cross--keyboard {\n  box-shadow: 1px 2px 2px rgb(247, 246, 246);\n}\n.closing-cross:hover {\n  color: rgba(19, 19, 107, 0.493);\n  cursor: pointer;\n}\n\n.board {\n  z-index: 10000;\n  background-color: white;\n  box-shadow: 3px 4px 4px grey;\n  width: 100%;\n}\n.board__cells {\n  width: 100%;\n  border-bottom: 1px solid lightgray;\n  padding: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  justify-content: space-evenly;\n}\n.board__cell {\n  width: 100%;\n  font-size: 0.875rem;\n  font-weight: 600;\n  color: rgb(34, 33, 33);\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n}\n@media (min-width: 75rem) {\n  .board__cell {\n    font-size: 1rem;\n  }\n}\n.board__cell--blue {\n  color: rgb(19, 19, 107);\n}\n.board__cell--yellow {\n  color: rgb(255, 217, 0);\n  margin-right: 10px;\n}\n\n.btn {\n  width: 90px;\n  height: 40px;\n  border: none;\n  border-radius: 30px;\n  font-size: 0.875rem;\n  font-weight: 600;\n  color: white;\n  cursor: pointer;\n}\n@media (min-width: 48rem) {\n  .btn {\n    font-size: 1rem;\n    width: 100px;\n  }\n}\n.btn--enabled {\n  background-color: rgb(19, 19, 107);\n}\n.btn--enabled:hover {\n  background-color: rgb(8, 8, 58);\n}\n.btn--disabled {\n  background-color: rgba(19, 19, 107, 0.562);\n}\n\n.search-form {\n  min-height: 340px;\n  padding: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 40px;\n  border-radius: 15px;\n  box-shadow: 1px 2px 2px lightgray;\n  border: 1px solid rgba(233, 230, 230, 0.425);\n  background-color: white;\n}\n.search-form__instruction {\n  font-size: 0.75rem;\n  color: grey;\n  text-align: center;\n}\n.search-form__checkboxes {\n  width: 90%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 15px;\n}\n.search-form .checkbox {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  width: 100%;\n}\n.search-form .checkbox label {\n  font-weight: 600;\n}\n.search-form .blue-b {\n  font-size: 1rem;\n  color: rgb(19, 19, 107);\n}\n.search-form .yellow-b {\n  font-size: 1rem;\n  color: rgb(255, 217, 0);\n}\n.search-form__input {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 10px;\n}\n.search-form .number-input {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  gap: 20px;\n  width: 100%;\n  max-width: 400px;\n  height: 40px;\n}\n.search-form .number-input label {\n  font-weight: 400;\n  color: rgb(34, 33, 33);\n}\n.search-form input {\n  width: 100%;\n  max-width: 60px;\n  height: 100%;\n  padding: 10px;\n  border: 1px solid lightgray;\n  border-radius: 10px;\n}\n.search-form input::-webkit-outer-spin-button,\n.search-form input::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n.search-form input[type=number] {\n  -moz-appearance: textfield;\n}\n.search-form__error-mess {\n  text-align: center;\n  color: red;\n  font-size: 0.75rem;\n  font-weight: 400;\n}\n\n.drowpDownInput {\n  border: 1px solid rgb(19, 19, 107);\n  border-radius: 4px;\n  padding: 3px;\n  background-color: white;\n}\n\n.blue-banner {\n  width: 100%;\n  min-height: 40px;\n  text-align: center;\n  padding: 30px;\n  color: white;\n  background-color: rgb(19, 19, 107);\n  font-size: 1.375rem;\n  margin-bottom: 20px;\n  border-radius: 15px;\n  line-height: 38px;\n}\n@media (min-width: 48rem) {\n  .blue-banner {\n    font-size: 1.625rem;\n  }\n}\n@media (min-width: 75rem) {\n  .blue-banner {\n    font-size: 1.875rem;\n  }\n}\n@media (min-width: 48rem) {\n  .blue-banner--med {\n    font-size: 1.625rem;\n  }\n}","\r\nheader {\r\n    width: 100%;\r\n    h1 {\r\n        height: 120px;\r\n        background-color: $blue;\r\n        color: $white;\r\n        font-size: 1.5rem;\r\n        padding: 10px 20px;\r\n        text-align: center;\r\n        @include flexCenter;\r\n        font-weight: 700;\r\n        @include breakpoint(small) {\r\n            font-size: 28px;\r\n        }\r\n        @include breakpoint(medium) {\r\n            font-size: 2.25rem;\r\n        }\r\n        @include breakpoint(x-large) {\r\n            font-size: 2.5rem;\r\n        }\r\n    }\r\n\r\n    .nav {\r\n        width: 80%;\r\n        max-width: 400px;\r\n        height: 70px;\r\n        margin: 15px auto;\r\n        @include flex-row;\r\n        justify-content: space-evenly;\r\n        @include stylingForBox;\r\n    }\r\n\r\n    a { \r\n        font-size: 1rem;\r\n        color: $blue;\r\n    }\r\n}","$breakpoints: (\r\n    'small': '36rem', // ≥576px\r\n    'small-medium': '42rem', // ≥676px\r\n    'medium': '48rem', // ≥768px\r\n    'large': '62rem', // ≥992p\r\n    'x-large': '75rem', // ≥1200px\r\n    'xx-large': '87.5rem', // ≥1400px\r\n);\r\n\r\n@mixin breakpoint($size) {\r\n\t@media (min-width: map-get($breakpoints, $size)) {\r\n\t\t@content;\r\n\t}\r\n}\r\n\r\n@mixin flexCenter {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n@mixin stylingForBox {\r\n    border-radius: 15px;\r\n    box-shadow: 1px 2px 2px $light-gray;\r\n    border: 1px solid $gray;\r\n    background-color: $white;\r\n}\r\n\r\n@mixin flex-column {\r\n    @include flexCenter;\r\n    flex-direction: column;\r\n}\r\n\r\n@mixin flex-row {\r\n    @include flexCenter;\r\n    flex-direction: row;\r\n}\r\n\r\n@mixin genericContainer {\r\n    width: 90%;\r\n    position: relative;\r\n    animation: fade-slide-in 0.6s ease-out forwards;\r\n}\r\n\r\n@mixin fdbckBubble-genericLayout {\r\n    .num {\r\n        @include flex-row;\r\n        gap: 5px;\r\n    }\r\n\r\n    span {\r\n        margin-right: 5px;\r\n        font-size: 0.875rem;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n}",".last-results {\r\n    padding: 0 15px;\r\n    margin-top: 2.5rem;\r\n    gap: 50px;\r\n\r\n    &__title {\r\n        font-size: 1.375rem;\r\n        color: $black;\r\n        text-align: center;\r\n        margin-bottom: 50px;\r\n        @include breakpoint(medium) {\r\n            font-size: 1.5rem;\r\n        }\r\n        @include breakpoint(x-large) {\r\n            font-size: 1.625rem;\r\n        }\r\n    }\r\n\r\n    &__draws {\r\n        @include flex-column;\r\n        gap: 50px;\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n",".keyboard-container {\r\n    width: 100%;\r\n    padding: 20px;\r\n    max-width: 800px;\r\n    @include flexCenter;\r\n    z-index: 5000;\r\n    animation: fade-slide-in 0.7s ease-out forwards;\r\n}\r\n\r\n",".keyboard {\r\n    width: 100%;\r\n    padding: 40px;\r\n    gap: 40px;\r\n    position: relative;\r\n    z-index: 10000;\r\n    background-color: $white;\r\n    @include stylingForBox;\r\n    @include flex-column;\r\n\r\n    &__advise {\r\n        font-size: 0.875rem;\r\n        font-weight: 400;\r\n        color: $grey;\r\n        margin-right: 20px;\r\n        text-align: center;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__keys {\r\n        flex-wrap: wrap;\r\n        gap: 35px;\r\n        @include flex-row;\r\n        @include breakpoint(medium) {\r\n            display: grid;\r\n            grid-template-columns: auto auto;\r\n            grid-template-rows: auto;\r\n        }\r\n    }\r\n\r\n    &__blue-keys {\r\n        flex-wrap: wrap;\r\n        row-gap: 20px;\r\n        column-gap: 10px;\r\n        @include flex-row;\r\n        @include breakpoint(medium) {\r\n            display: grid;\r\n            grid-template-columns: repeat(10, 1fr);\r\n            grid-template-rows: repeat(5, 1fr);\r\n        }\r\n    }\r\n\r\n    &__yellow-keys {\r\n        flex-wrap: wrap;\r\n        column-gap:10px;\r\n        row-gap: 20px;\r\n        @include flex-row;\r\n        @include breakpoint(medium) {\r\n            display: grid;\r\n            grid-template-columns: repeat(3, 1fr);\r\n            grid-template-rows: repeat(4, 1fr);\r\n            row-gap: 20px;\r\n            column-gap: 10px;\r\n        }\r\n    }\r\n\r\n    &__config {\r\n        font-size: 0.875rem;\r\n        color: $black;\r\n        max-width: 400px;\r\n        text-align: center;\r\n        line-height: 24px;\r\n        font-size: 0.875rem;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n}",".ranking-boards {\r\n    @include genericContainer;\r\n\r\n    &__boards {\r\n        width: 100%;\r\n        @include flex-column;\r\n        gap: 20px;\r\n        @include breakpoint(small) {\r\n            display: grid;\r\n            grid-template-columns: repeat(2, 1fr);\r\n            grid-row: repeat(3, auto);\r\n        }\r\n        @include breakpoint(large) {\r\n            grid-template-columns: repeat(4, 1fr);\r\n            grid-row: repeat(2, auto);\r\n        }\r\n        @include breakpoint(xx-large) {\r\n            grid-template-columns: repeat(4, 1fr);\r\n            grid-row: repeat(2, auto);\r\n        }\r\n    }\r\n}\r\n",".top10 {\r\n    @include genericContainer;\r\n    max-width: 700px;\r\n}",".tools {\r\n    width: 100%;\r\n    margin-top: 40px;\r\n    \r\n    &__menu {\r\n        padding: 40px;\r\n        min-height: 250px;\r\n        width: 80%;\r\n        max-width: 500px;\r\n        margin: auto;\r\n        font-size: 0.875rem;\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: center;\r\n        gap: 15px;\r\n        @include stylingForBox;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    \r\n        li {\r\n            list-style: disc;\r\n        }\r\n        \r\n        li:hover {\r\n            color: $blue;\r\n            font-weight: 600;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n}",".overlay {\r\n    width: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    min-height: 100vh;\r\n    background-color: $overlay;\r\n    @include flex-column;\r\n}",".search-handler {\r\n    @include genericContainer;\r\n    max-width: 500px;\r\n}",".feedback {\r\n    @include genericContainer;\r\n    max-width: 450px;\r\n\r\n    &__bubble {\r\n        width: 100%;\r\n        min-height: 200px;\r\n        padding: 30px;\r\n        background-color: $white;\r\n        @include flex-column;\r\n        @include stylingForBox;\r\n        gap: 30px;\r\n    }\r\n\r\n    &__bubble--numBestFriends {\r\n        @include fdbckBubble-genericLayout;\r\n        .result__list {\r\n            @include flex-row;\r\n            flex-wrap: wrap;\r\n            gap: 10px;\r\n        }\r\n    }\r\n\r\n    &__bubble--drawGap {\r\n        @include fdbckBubble-genericLayout;\r\n        .result-declaration {\r\n            @include flex-row;\r\n            flex-wrap: wrap;\r\n            .nowrap {\r\n                text-wrap:nowrap;\r\n            }\r\n        }\r\n    }\r\n    \r\n    &__bubble--drawHistory {\r\n        padding: 30px 15px;\r\n        min-height: 150px;\r\n        max-height: 420px;\r\n        .innerScreen {\r\n            width: 100%;\r\n            height: 100%;\r\n            @include flex-column;\r\n            justify-content: flex-start;\r\n            gap: 40px;\r\n            overflow-y: scroll;\r\n        }\r\n        .innerScreen__message {\r\n            color: $blue;\r\n            font-size: 0.875rem;\r\n            font-weight: 600;\r\n            text-align: center;\r\n            @include breakpoint(medium) {\r\n                font-size: 1rem;\r\n            }\r\n        }\r\n    }\r\n\r\n}",".draw {\r\n    @include flex-column;\r\n    gap: 20px;\r\n\r\n    &__date {\r\n        font-size: 0.875rem;\r\n        color: $black;\r\n        @include breakpoint(medium) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__balls {\r\n        @include flex-row;\r\n        gap: 10px;\r\n        flex-wrap: wrap;\r\n    }\r\n\r\n    &__balls-blue {\r\n        @include flex-row;\r\n        gap: 5px;\r\n        flex-wrap: wrap;\r\n    }\r\n\r\n    &__balls-yellow {\r\n        @include flex-row;\r\n        gap: 5px;\r\n    }\r\n}","@import '../base/colors';\r\n@import '../base/mixins';\r\n\r\n.ball {\r\n    width: 35px;\r\n    height: 35px;\r\n    border-radius: 100px;\r\n    color: $white;\r\n    font-weight: 700;\r\n    font-size: 0.875rem;\r\n    @include flexCenter;\r\n    @include breakpoint(medium) {\r\n        width: 40px;\r\n        height: 40px;\r\n        font-size: 1rem;\r\n    }\r\n\r\n    &--blue {\r\n        background-color: $blue;\r\n    }\r\n\r\n    &--yellow {\r\n        background-color: $yellow;\r\n    }\r\n    &--transparent-blue {\r\n        background-color: $blue-transparent;\r\n    }\r\n    &--transparent-yellow {\r\n        background-color: $yellow-transparent;\r\n    }\r\n}",".keyboard-key {\r\n    width: 35px;\r\n    height: 35px;\r\n    font-weight: 600;\r\n    box-shadow: 3px 4px 3px $keyboard-key-boxShadow;\r\n    border-radius: 100%;\r\n    border: 1px solid $keyboard-key-border;\r\n    background-color: $white;\r\n    font-size: 0.875rem;\r\n    cursor: pointer;\r\n    @include flexCenter;\r\n    list-style: none;\r\n    &:hover {\r\n        box-shadow: 2px 3px 2px $keyboard-key-boxShadow;\r\n    }\r\n    @include breakpoint(xx-large) {\r\n        width: 40px;\r\n        height: 40px;\r\n        font-size: 1rem;\r\n    }\r\n\r\n    &--blue {\r\n        color: $blue;\r\n        &:hover {\r\n            color: $blue-transparent;\r\n        }\r\n    }\r\n\r\n    &--yellow {\r\n        color: $yellow;\r\n        &:hover {\r\n            color: $yellow-transparent;\r\n        }\r\n    }\r\n\r\n    &__clicked--blue {\r\n        color: $white;\r\n        background-color: $blue;\r\n        border: none;\r\n        box-shadow: none;\r\n        &:hover {\r\n            color:$white\r\n        }\r\n    }\r\n\r\n    &__clicked--yellow {\r\n        color: $white;\r\n        background-color: $yellow;\r\n        border: none;\r\n        box-shadow: none;\r\n        &:hover {\r\n            color:$white\r\n        }\r\n    }\r\n    \r\n    &__disabled--blue {\r\n        color: $blue-disabled;\r\n        &:hover {\r\n            color: $blue-disabled;\r\n            box-shadow: 3px 4px 3px $keyboard-key-boxShadow;\r\n        }\r\n    }\r\n    &__disabled--yellow {\r\n        color: $yellow-disabled;\r\n        &:hover {\r\n            color: $yellow-disabled;\r\n            box-shadow: 3px 4px 3px $keyboard-key-boxShadow;\r\n        }\r\n    }\r\n}",".closing-cross {\r\n    width: 25px;\r\n    height: 25px;\r\n    font-size: 0.875rem;\r\n    border-radius: 100%;\r\n    border: 1px solid $light-gray;\r\n    background-color: $white;\r\n    position: absolute;\r\n    top: 7px;\r\n    right: 12px;\r\n    @include flex-column;\r\n\r\n    &--banner {\r\n        border: none;\r\n    }\r\n\r\n    &--keyboard {\r\n        box-shadow: 1px 2px 2px $closing-cross-boxShasow;\r\n    }\r\n\r\n    &:hover {\r\n        color:$blue-transparent;\r\n        cursor: pointer;\r\n    }\r\n}\r\n\r\n\r\n",".board {\r\n    z-index: 10000;\r\n    background-color: $white;\r\n    box-shadow: 3px 4px 4px $grey;\r\n    width: 100%;\r\n\r\n    &__cells {\r\n        width: 100%;\r\n        border-bottom: 1px solid $light-gray;\r\n        padding: 10px;\r\n        @include flex-row;\r\n        justify-content: space-evenly;\r\n    }\r\n\r\n    &__cell {\r\n        width: 100%;\r\n        font-size: 0.875rem;\r\n        font-weight: 600;\r\n        color: $black;\r\n        text-align: center;\r\n        @include flex-row;\r\n        @include breakpoint(x-large) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__cell--blue {\r\n        color: $blue;\r\n    }\r\n\r\n    &__cell--yellow {\r\n        color: $yellow;\r\n        margin-right: 10px;\r\n        \r\n    }\r\n}",".btn {\r\n    width: 90px;\r\n    height: 40px;\r\n    border: none;\r\n    border-radius: 30px;\r\n    font-size: 0.875rem;\r\n    font-weight: 600;\r\n    color: $white;\r\n    cursor: pointer;\r\n    @include breakpoint(medium) {\r\n        font-size: 1rem;\r\n        width: 100px;\r\n    }\r\n    &--enabled {\r\n        background-color: $blue;\r\n        &:hover {\r\n            background-color: $darkBlue;\r\n        }\r\n    }\r\n    &--disabled {\r\n        background-color: $btn-disabled;\r\n    }\r\n}",".search-form {\r\n    min-height: 340px;\r\n    padding: 30px;\r\n    @include flex-column;\r\n    gap: 40px;\r\n    @include stylingForBox;\r\n\r\n    &__instruction {\r\n        font-size: 0.75rem;\r\n        color: $grey;\r\n        text-align: center;\r\n    }\r\n    \r\n    &__checkboxes {\r\n        width: 90%;\r\n        @include flex-row;\r\n        gap: 15px;\r\n    }\r\n    \r\n    .checkbox {\r\n        @include flex-row;\r\n        width: 100%;\r\n    \r\n        label {\r\n            font-weight: 600;\r\n        }\r\n    }\r\n    \r\n    .blue-b {\r\n        font-size: 1rem;\r\n        color: $blue;\r\n    }\r\n    \r\n    .yellow-b {\r\n        font-size: 1rem;\r\n        color: $yellow;\r\n    }\r\n    \r\n    &__input {\r\n        @include flex-row;\r\n        gap: 10px;\r\n    }\r\n    \r\n    .number-input {\r\n        @include flex-row;\r\n        gap: 20px;\r\n        width: 100%;\r\n        max-width: 400px;\r\n        height: 40px;\r\n    \r\n        label {\r\n            font-weight: 400;\r\n            color: $black;\r\n        }\r\n    }\r\n    \r\n    input {\r\n        width: 100%;\r\n        max-width: 60px;\r\n        height: 100%;\r\n        padding: 10px;\r\n        border: 1px solid $light-gray;\r\n        border-radius: 10px;\r\n    }\r\n    \r\n    input::-webkit-outer-spin-button,\r\n    input::-webkit-inner-spin-button {\r\n    -webkit-appearance: none;\r\n    margin: 0;\r\n    }\r\n    \r\n    input[type=number] {\r\n    -moz-appearance: textfield;\r\n    }\r\n    \r\n    &__error-mess {\r\n        text-align: center;\r\n        color: $red;\r\n        font-size: 0.75rem;\r\n        font-weight: 400;\r\n    }\r\n}\r\n\r\n",".drowpDownInput {\r\n    border: 1px solid $blue;\r\n    border-radius: 4px;\r\n    padding: 3px;\r\n    background-color: $white;\r\n}",".blue-banner {\r\n    width: 100%;\r\n    min-height: 40px;\r\n    text-align: center;\r\n    padding: 30px;\r\n    color: $white;\r\n    background-color: $blue;\r\n    font-size: 1.375rem;\r\n    margin-bottom: 20px;\r\n    border-radius: 15px;\r\n    line-height: 38px;\r\n    @include breakpoint(medium) {\r\n        font-size: 1.625rem;\r\n    }\r\n    @include breakpoint(x-large) {\r\n        font-size: 1.875rem;\r\n    }\r\n\r\n    &--med {\r\n        @include breakpoint(medium) {\r\n            font-size: 1.625rem;\r\n        }\r\n    }\r\n}\r\n    "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -778,7 +816,6 @@ header a {
   \*****************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /*
@@ -873,7 +910,6 @@ module.exports = function (cssWithMappingToString) {
   \************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = function (item) {
@@ -899,7 +935,6 @@ module.exports = function (item) {
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -954,7 +989,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \****************************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var stylesInDOM = [];
@@ -1048,7 +1082,6 @@ module.exports = function (list, options) {
   \********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var memo = {};
@@ -1092,7 +1125,6 @@ module.exports = insertBySelector;
   \**********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -1112,7 +1144,6 @@ module.exports = insertStyleElement;
   \**********************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -1132,7 +1163,6 @@ module.exports = setAttributesWithoutAttributes;
   \***************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -1203,7 +1233,6 @@ module.exports = domAPI;
   \*********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -1227,7 +1256,6 @@ module.exports = styleTagTransform;
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Storage: () => (/* binding */ Storage)
@@ -1266,7 +1294,6 @@ class Storage {
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Api: () => (/* binding */ Api)
@@ -33654,7 +33681,6 @@ class Api {
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Draw: () => (/* binding */ Draw)
@@ -33670,31 +33696,147 @@ class Draw {
         draw.classList.add('draw');
         draw.id = drawObj.id;
         draw.innerHTML = `
-        <h3 id="draw__date" class="draw__date">${drawObj.date}</h3>
+        <h3 class="draw__date">${drawObj.date}</h3>
             <div class="draw__balls">
-                <ul class="draw__balls-5">
+                <ul class="draw__balls-blue">
                 </ul>
-                <ul class="draw__balls-2">
+                <ul class="draw__balls-yellow">
                 </ul>
             </div>
         `
         document.getElementById(`${this.parentNodeId}`).insertAdjacentElement('beforeend', draw);
-        this.renderBalls(drawObj.blueBalls, draw.id, 'blue');
-        this.renderBalls(drawObj.yellowBalls, draw.id, 'yellow');
+        this.addBalls('blue', drawObj.blueBalls, draw.id)
+        this.addBalls('yellow', drawObj.yellowBalls, draw.id)
     }
-    renderBalls(ballsToRender, parentNodeId, ballColor) {
-        let ballsContainer;
-        const parentNode = document.getElementById(`${parentNodeId}`)
-        if(ballColor === 'blue') { 
-            ballsContainer = parentNode.querySelector('.draw__balls-5');
-        } else if(ballColor === 'yellow') { 
-            ballsContainer = parentNode.querySelector('.draw__balls-2');
-        }
-        ballsToRender.forEach((ball)=> {
-            ballsContainer.insertAdjacentHTML('beforeend', `<li class="ball ball--${ballColor}"> ${ball} </li>`);
-        });
+    addBalls(color, ballsArray, drawId) {
+        const draw = document.getElementById(`${drawId}`);
+        const ballContainer = draw.querySelector(`.draw__balls-${color}`);
+        ballsArray.forEach((ball)=> {
+            ballContainer.insertAdjacentHTML('beforeend', `<li class="ball ball--${color}">${ball}</li>`)
+        })
     }
 }
+
+/***/ }),
+
+/***/ "./src/js/drawHistory.js":
+/*!*******************************!*\
+  !*** ./src/js/drawHistory.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DrawHistory: () => (/* binding */ DrawHistory)
+/* harmony export */ });
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ "./src/js/helpers.js");
+/* harmony import */ var _Storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Storage */ "./src/js/Storage.js");
+/* harmony import */ var _draw__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./draw */ "./src/js/draw.js");
+
+
+
+
+class DrawHistory {
+    constructor(userSelection) {
+        this.userSelection = userSelection;
+        this.data = [];
+        this.fetchRelatedDraws(this.userSelection);
+        this.displayHandler();
+    }
+    fetchRelatedDraws(userSelection) {
+        _Storage__WEBPACK_IMPORTED_MODULE_1__.Storage.data.forEach((obj)=> {
+            const blueBsCount = this.comparesNumbers(userSelection.blueBalls, obj.blueBalls);
+            const yellowBsCount =  this.comparesNumbers(userSelection.yellowBalls, obj.yellowBalls);
+            const total = blueBsCount + yellowBsCount;
+            const objCopy = {
+                ...obj,
+            }
+            objCopy.id = (objCopy.id *10);// Changing of id to not interact with last-results node's ids
+            if(total >= userSelection.min) { this.data.push(objCopy) }
+        })
+    }
+    comparesNumbers(userBalls, storageBalls) {
+        let count = 0;
+        userBalls.forEach((ball)=>{
+            if(storageBalls.includes(ball)) { count ++ }
+        })
+        return count;
+    }
+
+    displayHandler() {
+        const parentNode = (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.createGenericContainer)(
+            'feedback',
+            `${this.data.length} combinations found among ${_Storage__WEBPACK_IMPORTED_MODULE_1__.Storage.data.length} draws`, 
+            'blue-banner--med');
+        const speContainerId = this.createSpecificContainer(parentNode);
+        document.getElementById('last-results__draws').classList.add('none');
+        this.displayDraws(this.data, speContainerId);
+    }
+    createSpecificContainer(parentNode) {
+        const speContainer = document.createElement('div');
+        speContainer.id = 'speContainer';
+        speContainer.classList.add('feedback__bubble', 'feedback__bubble--drawHistory');
+        parentNode.insertAdjacentElement('beforeend', speContainer);
+        const innerScreen = document.createElement('div');
+        innerScreen.classList.add('innerScreen');
+        innerScreen.id= 'innerScreen';
+        speContainer.appendChild(innerScreen);
+        return innerScreen.id;
+    }
+    displayDraws(data, parentNodeId) {
+        if(this.data.length) {
+            data.forEach((obj)=> {
+                new _draw__WEBPACK_IMPORTED_MODULE_2__.Draw(obj, parentNodeId);
+                this.renderBallsOpaque(obj.id, this.userSelection.blueBalls, 'blue');
+                this.renderBallsOpaque(obj.id, this.userSelection.yellowBalls, 'yellow');
+            })
+        } else { 
+            const templtMess = document.getElementById('innerScreenTempltMess');
+            const mess = templtMess.content.cloneNode(true);
+            document.getElementById(`${parentNodeId}`).appendChild(mess);
+        }
+    }
+    renderBallsOpaque(dataObjId, userSelection, color) {
+        const draw = document.getElementById(`${dataObjId}`) 
+        const ballsList = draw.querySelectorAll(`.ball--${color}`);
+        ballsList.forEach((ball)=> {
+            if(!userSelection.includes(parseInt(ball.textContent))) {
+                ball.classList.remove(`ball--${color}`);
+                ball.classList.add(`ball--transparent-${color}`);
+            }
+        })
+    }
+}
+
+/***/ }),
+
+/***/ "./src/js/helpers.js":
+/*!***************************!*\
+  !*** ./src/js/helpers.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createGenericContainer: () => (/* binding */ createGenericContainer)
+/* harmony export */ });
+const createGenericContainer = (subContainerClass, h2Title, h2AdditionalClass)=> {
+    const mainContainer = document.createElement('div');
+    mainContainer.id = 'mainContainer';
+    mainContainer.classList.add('overlay');
+    mainContainer.innerHTML = `
+    <article id="subContainer" class="${subContainerClass}">
+        <span id="subContainer__cross" class="closing-cross closing-cross--banner">x</span>
+        <h2 id="subContainer__title" class="blue-banner ${h2AdditionalClass}">${h2Title}</h2>
+    </article>
+    `
+    document.getElementById('page-container').appendChild(mainContainer);
+    document.getElementById('subContainer__cross').addEventListener('click', ()=> {
+        mainContainer.remove();
+    })
+    return mainContainer.querySelector('#subContainer');
+}
+
 
 /***/ }),
 
@@ -33702,9 +33844,160 @@ class Draw {
 /*!****************************!*\
   !*** ./src/js/keyboard.js ***!
   \****************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module parse failed: Unexpected token (10:8)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|         blueBalls: [],\n|         yellowBalls: []\n>         inputValue:'',\n|     };\n|     static display = ()=> {");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Keyboard: () => (/* binding */ Keyboard)
+/* harmony export */ });
+/* harmony import */ var _drawHistory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./drawHistory */ "./src/js/drawHistory.js");
+
+
+class Keyboard {
+    static pageContainer;
+    static countBlue = 0;
+    static countYellow = 0;
+    static selectedBalls = {
+        blueBalls: [],
+        yellowBalls: [],
+        min:'',
+    };
+    static displayHandler = ()=> {
+        this.appendNode();
+        this.renderKeyboardKeys(1, 50, 'blue');
+        this.renderKeyboardKeys(1, 12, 'yellow');
+        this.addEvListenerToKeys('blue', 5, this.countBlue);
+        this.addEvListenerToKeys('yellow', 2, this.countYellow);
+        this.addClosingCrossEvListener(this.pageContainer);
+        this.addDropDownInput(this.pageContainer);
+        this.addBtnEventListener(this.pageContainer);
+    }
+    static appendNode() {
+        const pageContainer = document.getElementById('page-container');
+        this.pageContainer = pageContainer;
+        const KeyboardTemp = document.getElementById('keyboard-temp');
+        const keyboard = KeyboardTemp.content.cloneNode(true);
+        this.disableBtn(keyboard);
+        pageContainer.appendChild(keyboard);
+    }
+    static renderKeyboardKeys(MIN, MAX, color) {
+        const keyboard = document.getElementById('keyboard');
+        let kbKeysContainer;
+        if(color === 'blue') {
+            kbKeysContainer = keyboard.querySelector('.keyboard__blue-keys');
+        } else if(color === 'yellow') {
+            kbKeysContainer = keyboard.querySelector('.keyboard__yellow-keys');
+        }
+        for(let i = MIN; i <= MAX; i ++ ) {
+            kbKeysContainer.insertAdjacentHTML('beforeend', 
+            `<li class="keyboard-key keyboard-key--${color}">${i}</li>`
+            );
+        }
+    }
+    static addEvListenerToKeys(keyColor, maxKey, keyCount) {
+        const keyboard = document.getElementById('keyboard');
+        const keysContainer = keyboard.querySelector(`.keyboard__${keyColor}-keys`);
+        keysContainer.addEventListener('click', (event)=> {
+            const bool = event.target.classList.contains(`keyboard__${keyColor}-keys`);
+            if(!bool) {//Add keyboard-key__clicked on keys only
+                if(keyCount < maxKey) {
+                    event.target.classList.toggle(`keyboard-key__clicked--${keyColor}`);
+                    const bool = event.target.classList.contains(`keyboard-key__clicked--${keyColor}`);
+                    bool? (keyCount+=1) : (keyCount-= 1);
+                    if(keyCount === maxKey) { 
+                        this.addKeyDisabled(keyColor, keysContainer);
+                        this.enableBtn(keyColor, keyboard);
+                    }
+                }
+                else if
+                (
+                    event.target.classList.contains(`keyboard-key__clicked--${keyColor}`) &&
+                    keyCount === maxKey
+                ) { 
+                    event.target.classList.toggle(`keyboard-key__clicked--${keyColor}`);
+                    this.removeKeyDisabled(keyColor, keysContainer);
+                    this.disableBtn(keyboard);
+                    keyCount --;
+                }
+            }
+        });
+    }
+    static addKeyDisabled(keyColor, keysContainer ) {
+        const keysList = keysContainer.querySelectorAll(`.keyboard-key--${keyColor}`);
+        keysList.forEach((key)=> {
+            if(!key.classList.contains(`keyboard-key__clicked--${keyColor}`)) { 
+                key.classList.add(`keyboard-key__disabled--${keyColor}`);
+            }
+        })
+    }
+    static enableBtn(keyColor, keyboard) {
+        const color = keyColor === 'blue' ? 'yellow' : 'blue';
+        if(document.querySelector(`.keyboard-key__disabled--${color}`)) {
+            //Enable btn
+            const btn = keyboard.querySelector('#keyboard__btn');
+            btn.disabled = false;
+            btn.classList.remove('btn--disabled');
+            btn.classList.add('btn--enabled');
+        }
+    }
+    static disableBtn(keyboard) {
+        const btn = keyboard.querySelector('#keyboard__btn');
+        btn.disabled = true;
+        btn.classList.add('btn--disabled');
+        btn.classList.remove('btn--enabled');
+    }
+    static removeKeyDisabled(keyColor, keysContainer) {
+        const keysList = keysContainer.querySelectorAll(`.keyboard-key--${keyColor}`);
+        keysList.forEach((key)=> {
+            if(key.classList.contains(`keyboard-key__disabled--${keyColor}`)) { 
+                key.classList.remove(`keyboard-key__disabled--${keyColor}`);
+            }
+        })
+    }
+    static addClosingCrossEvListener(pageContainer) {
+        const closingCross = pageContainer.querySelector('#keyboard__closing-cross');
+        closingCross.addEventListener('click', ()=> {
+            this.resetClassVariables();
+            pageContainer.querySelector('.overlay').remove();
+        });
+    }
+    static addDropDownInput(parentNode) {
+        const dropDown = parentNode.querySelector('.drowpDownInput');
+        for(let i = 2; i <= 7; i ++) {
+            dropDown.insertAdjacentHTML('beforeend', `<option value="${i}">${i}</option>`);
+        }
+    }
+    static addBtnEventListener(pageContainer) {
+        const btn = pageContainer.querySelector('#keyboard__btn');
+        btn.addEventListener('click', ()=> {
+            this.storeSelectedBalls(['blue', 'yellow'])
+            document.getElementById('overlay').remove();
+            new _drawHistory__WEBPACK_IMPORTED_MODULE_0__.DrawHistory(this.selectedBalls);
+            this.resetClassVariables();
+        });
+    }
+    static storeSelectedBalls(colorArray) {
+        let colorContainer ; 
+        let keysList;
+        colorArray.forEach((color)=> {
+            colorContainer = document.getElementById(`keyboard__${color}-keys`);
+            keysList = colorContainer.querySelectorAll('li');
+            keysList.forEach((key)=> {
+                if(key.classList.contains(`keyboard-key__clicked--${color}`)) {
+                    this.selectedBalls[`${color}Balls`].push(parseInt(key.innerHTML));
+                }
+            });
+        });
+        this.selectedBalls.min = parseInt(document.getElementById('drowpDownInput').value);
+    }
+    static resetClassVariables() {
+        this.countBlue  = 0;
+        this.countYellow = 0;
+        this.selectedBalls.blueBalls = [];
+        this.selectedBalls.yellowBalls = [];
+        this.min = '';
+    }
+}
 
 /***/ }),
 
@@ -33714,7 +34007,6 @@ throw new Error("Module parse failed: Unexpected token (10:8)\nYou may need an a
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   LastResultsList: () => (/* binding */ LastResultsList)
@@ -33748,7 +34040,6 @@ class LastResultsList {
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Navigation: () => (/* binding */ Navigation)
@@ -33781,7 +34072,6 @@ class Navigation {
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ToolsMenu: () => (/* binding */ ToolsMenu)
@@ -33791,7 +34081,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class ToolsMenu {
     static arrayFunc = [
-        _keyboard__WEBPACK_IMPORTED_MODULE_0__.Keyboard.display
+        _keyboard__WEBPACK_IMPORTED_MODULE_0__.Keyboard.displayHandler
     ];
     
     static addClickListeners() {
@@ -33882,9 +34172,8 @@ class ToolsMenu {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
@@ -33917,4 +34206,4 @@ App.init();
 
 /******/ })()
 ;
-//# sourceMappingURL=3903ceffb8016317b5b3.js.map
+//# sourceMappingURL=f68e268bf8f30aabeb3d.js.map

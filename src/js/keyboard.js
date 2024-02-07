@@ -7,9 +7,9 @@ export class Keyboard {
     static selectedBalls = {
         blueBalls: [],
         yellowBalls: [],
-        inputValue:'',
+        min:'',
     };
-    static display = ()=> {
+    static displayHandler = ()=> {
         this.appendNode();
         this.renderKeyboardKeys(1, 50, 'blue');
         this.renderKeyboardKeys(1, 12, 'yellow');
@@ -118,7 +118,8 @@ export class Keyboard {
         const btn = pageContainer.querySelector('#keyboard__btn');
         btn.addEventListener('click', ()=> {
             this.storeSelectedBalls(['blue', 'yellow'])
-            DrawHistory.display();
+            document.getElementById('overlay').remove();
+            new DrawHistory(this.selectedBalls);
             this.resetClassVariables();
         });
     }
@@ -134,13 +135,13 @@ export class Keyboard {
                 }
             });
         });
-        this.selectedBalls.inputValue = parseInt(document.getElementById('drowpDownInput').value);
+        this.selectedBalls.min = parseInt(document.getElementById('drowpDownInput').value);
     }
     static resetClassVariables() {
         this.countBlue  = 0;
         this.countYellow = 0;
         this.selectedBalls.blueBalls = [];
         this.selectedBalls.yellowBalls = [];
-        this.inputValue = '';
+        this.min = '';
     }
 }

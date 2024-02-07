@@ -7,6 +7,7 @@
     background-color: $blue;
     font-size: 1.375rem;
     margin-bottom: 20px;
+    border-radius: 15px;
     line-height: 38px;
     @include breakpoint(medium) {
         font-size: 1.625rem;
