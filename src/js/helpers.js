@@ -14,3 +14,11 @@ export const createGenericContainer = (subContainerClass, h2Title, h2AdditionalC
     })
     return mainContainer.querySelector('#subContainer');
 }
+
+export const createSpecificContainer = (mainContainer, classListArray, tagName)=> {
+    const speContainer = document.createElement(`${tagName}`);
+    speContainer.id = 'speContainer';
+    speContainer.classList.add(... classListArray);
+    mainContainer.insertAdjacentElement('beforeend', speContainer);
+    return speContainer;
+}

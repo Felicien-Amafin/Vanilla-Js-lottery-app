@@ -1,8 +1,12 @@
 import { Keyboard } from "./keyboard";
+import { RankingBoardsList } from "./rankingBoardsList";
+import { SearchTool } from "./searchTool";
 
-export class ToolsMenu {
+export class Menu {
     static arrayFunc = [
-        Keyboard.displayHandler
+        Keyboard.displayHandler,
+        this.displayRankingBList,
+        this.displaySearchTool,
     ];
     
     static addClickListeners() {
@@ -14,5 +18,10 @@ export class ToolsMenu {
             i ++;
         })
     }
-    
+    static displayRankingBList() {
+        new RankingBoardsList();
+    }
+    static displaySearchTool() {
+        new SearchTool();
+    }
 }

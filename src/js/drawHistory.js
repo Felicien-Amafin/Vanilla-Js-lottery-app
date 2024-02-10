@@ -1,4 +1,4 @@
-import { createGenericContainer } from './helpers';
+import { createGenericContainer, createSpecificContainer } from './helpers';
 import { Storage } from './Storage';
 import { Draw } from './draw';
 
@@ -30,19 +30,18 @@ export class DrawHistory {
     }
 
     displayHandler() {
-        const parentNode = createGenericContainer(
-            'feedback',
-            `${this.data.length} combinations found among ${Storage.data.length} draws`, 
-            'blue-banner--med');
-        const speContainerId = this.createSpecificContainer(parentNode);
-        document.getElementById('last-results__draws').classList.add('none');
+        const mainContainer = 
+        createGenericContainer(
+        'feedback',
+        `${this.data.length} combinations found among ${Storage.data.length} draws`, 
+        'blue-banner--med'
+        );
+        const speContainer = 
+        createSpecificContainer(mainContainer, ['feedback__bubble', 'feedback__bubble--drawHistory'], 'section');
+        const speContainerId = this.createInnerSreen(speContainer);
         this.displayDraws(this.data, speContainerId);
     }
-    createSpecificContainer(parentNode) {
-        const speContainer = document.createElement('div');
-        speContainer.id = 'speContainer';
-        speContainer.classList.add('feedback__bubble', 'feedback__bubble--drawHistory');
-        parentNode.insertAdjacentElement('beforeend', speContainer);
+    createInnerSreen(speContainer) {
         const innerScreen = document.createElement('div');
         innerScreen.classList.add('innerScreen');
         innerScreen.id= 'innerScreen';
