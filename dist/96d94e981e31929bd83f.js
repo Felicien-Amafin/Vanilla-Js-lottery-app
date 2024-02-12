@@ -33728,6 +33728,30 @@ class Board {
 
 /***/ }),
 
+/***/ "./src/js/browserStorage.js":
+/*!**********************************!*\
+  !*** ./src/js/browserStorage.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BrowserStorage: () => (/* binding */ BrowserStorage)
+/* harmony export */ });
+class BrowserStorage {
+    static saveUserInfo(key, value) {
+        sessionStorage.setItem(`${key}`, JSON.stringify(value));
+    }
+    static getUserInfo() {
+
+    }
+    static deleteUserInfo() {
+
+    }
+}
+
+/***/ }),
+
 /***/ "./src/js/draw.js":
 /*!************************!*\
   !*** ./src/js/draw.js ***!
@@ -34249,7 +34273,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SearchTool: () => (/* binding */ SearchTool)
 /* harmony export */ });
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ "./src/js/helpers.js");
+/* harmony import */ var _browserStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./browserStorage */ "./src/js/browserStorage.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers */ "./src/js/helpers.js");
+
 
 
 class SearchTool {
@@ -34257,13 +34283,14 @@ class SearchTool {
         this.display();
     }
     display() {
-        const mainContainer = (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.createGenericContainer)(
+        const mainContainer = (0,_helpers__WEBPACK_IMPORTED_MODULE_1__.createGenericContainer)(
             'search-tool', 
             'Find your favorite number best(s) friend(s)', 
             'blue-banner--med'
         );
-        const speContainer = (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.createSpecificContainer)(mainContainer, ['search-form'], 'form');
+        const speContainer = (0,_helpers__WEBPACK_IMPORTED_MODULE_1__.createSpecificContainer)(mainContainer, ['search-form'], 'form');
         this.addContent(speContainer);
+        this.addEventListeners(speContainer);
     }
     addContent(parentNode) {
         parentNode.innerHTML = `
@@ -34271,7 +34298,7 @@ class SearchTool {
         <div id="search-form__checkboxes" class="search-form__checkboxes">
             <div class="checkbox">
                 <label for="blue-b" class="blue-b" name="ball-color" >Blue ball</label>
-                <input id="blue-b" type="radio" name="ball-color">
+                <input id="blue-b" type="radio" name="ball-color" checked>
             </div>
             <div class="checkbox">
                 <label for="yellow-b" class="yellow-b" name="ball-color" >Yellow ball</label>
@@ -34282,8 +34309,86 @@ class SearchTool {
             <label for="num-input">Enter number:</label>
             <input id="num-input" class="num-input" type="number" name="num-input">
         </div>
-        <button id="search-form__btn" class="btn" type="button">Search</button>
+        <p class="search-form__error-mess none">Enter valid number</p>
+        <button id="search-form__btn" class="btn btn--disabled" type="button">Search</button>
         `
+    }
+    addEventListeners(parentNode) {
+        this.addInputEvListener(parentNode);
+        this.addBtnEvListner(parentNode);
+    }
+    addInputEvListener(parentNode) {
+        parentNode.querySelector('#num-input').addEventListener('input', ()=> {
+            const btn = parentNode.querySelector('#search-form__btn');
+            if(parentNode.querySelector('#num-input').value !== '') {
+                btn.classList.remove('btn--disabled');
+                btn.classList.add('btn--enabled');
+                btn.disabled = false;
+            } else {
+                btn.classList.remove('btn--enabled');
+                btn.classList.add('btn--disabled');
+                btn.disabled = true;
+                if(!document.querySelector('.search-form__error-mess').classList.contains('none')) {
+                    // Remove error Mess if it has been displayed previously
+                    this.hideErrorMess();
+                }
+            }
+        })
+    }
+    addBtnEvListner(parentNode) {
+        parentNode.querySelector('#search-form__btn').addEventListener('click', ()=> {
+            if(!document.querySelector('.search-form__error-mess').classList.contains('none')) {
+                // Remove error Mess if it has been displayed previously
+                this.hideErrorMess();
+            }
+            const input = parentNode.querySelector('#num-input');
+            if(input.value !== '') {
+                const searchInfo = this.checkUserInput(this.getUserInput());
+                if(searchInfo) {
+                    _browserStorage__WEBPACK_IMPORTED_MODULE_0__.BrowserStorage.saveUserInfo('searchInfo', searchInfo);
+                    console.log('sending info')
+                } else {
+                    this.showErrorMess();
+                }
+                
+              
+               /*  if(true) {
+                    send info
+                } else {
+                    this.showErrorMess()
+                } */
+            }
+        });
+    }
+    getUserInput() {
+        const checkBoxes = document.querySelector('#search-form__checkboxes');
+        const list = checkBoxes.querySelectorAll('input');
+        const obj = {
+            checked: '',
+            numInput: '',
+        }
+        list.forEach((box)=> {
+            box.checked === true ? (obj.checked = box.id): null;
+        })
+        obj.numInput = parseInt(document.getElementById('num-input').value);
+        return obj;
+    }
+    checkUserInput(obj) {
+        if(obj.checked === 'blue-b') {
+            if((obj.numInput >= 1) && (obj.numInput <= 50)) {
+                return obj;
+            }
+        } else if(obj.checked === 'yellow-b') {
+            if((obj.numInput >= 1) && (obj.numInput <= 12)) {
+                return obj;
+            }
+        }
+    }
+    hideErrorMess() {
+        document.querySelector('.search-form__error-mess').classList.add('none');
+    }
+    showErrorMess() {
+        document.querySelector('.search-form__error-mess').classList.remove('none');
     }
 }
 
@@ -34397,4 +34502,4 @@ App.init();
 
 /******/ })()
 ;
-//# sourceMappingURL=2cea5c71664831601619.js.map
+//# sourceMappingURL=96d94e981e31929bd83f.js.map
