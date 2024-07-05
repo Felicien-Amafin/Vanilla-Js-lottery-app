@@ -1,19 +1,18 @@
 export class Navigation {
-    static clickListenerHandler(string1, string2) {
-        this.addClickListener(string1, string2);
-        this.addClickListener(string2, string1);
+    static clickListenerHandler(id1, id2) {
+        this.addClickListener(id1, id2);
+        this.addClickListener(id2, id1);
     }
-    static addClickListener(string1, string2) {
-        const el1 = document.getElementById(`${string1}-nav`); 
-        const el2 = document.getElementById(`${string2}-nav`); 
-        el1.addEventListener('click', ()=>{
-            if(el2.classList.contains('selected')) {
-                el2.classList.remove('selected');
-                el1.classList.add('selected');
-                document.getElementById(`${string1}`).classList.toggle('none');
-                document.getElementById(`${string2}`).classList.toggle('none');
+    static addClickListener(str1, str2) {
+        const elmt1 = document.getElementById(`${str1}-nav`); 
+        const elmt2 = document.getElementById(`${str2}-nav`); 
+        elmt1.addEventListener('click', ()=>{
+            if(elmt2.classList.contains('selected')) {
+                elmt2.classList.remove('selected');
+                elmt1.classList.add('selected');
+                document.getElementById(`${str1}`).classList.toggle('none');
+                document.getElementById(`${str2}`).classList.toggle('none');
             }
         })
-        if(string1 === 'last-results') {}
     }
 }

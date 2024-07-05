@@ -1,27 +1,36 @@
 import { Keyboard } from "./keyboard";
-import { RankingBoardsList } from "./rankingBoardsList";
+import { Ranking } from "./ranking";
 import { SearchTool } from "./searchTool";
+import { UiGapResult } from "./uiGapResult";
+import { UiBestFriendsResult } from "./uiBestFriendsResult";
 
 export class Menu {
-    static arrayFunc = [
-        Keyboard.displayHandler,
-        this.displayRankingBList,
-        this.displaySearchTool,
+    static funcs = [
+        Keyboard.display,
+        this.displayRanking,
+        this.countGap,
+        this.findBestFriends,
     ];
     
     static addClickListeners() {
-        const toolsMenu = document.getElementById('tools__menu');
-        const liList = toolsMenu.querySelectorAll('li');
+        // Add click listeners on each menu's li
+        const menu = document.getElementById('menu');
+        const liList = menu.querySelectorAll('li');
         let i = 0;
-        this.arrayFunc.forEach((func)=> {
+        this.funcs.forEach((func)=> {
             liList[i].addEventListener('click', func);
             i ++;
         })
     }
-    static displayRankingBList() {
-        new RankingBoardsList();
+    static displayRanking() {
+        new Ranking(); //Display number of appearence for each numbers
     }
-    static displaySearchTool() {
-        new SearchTool();
+    static countGap() {
+        const ui = new UiGapResult();
+        new SearchTool("Since how many draws your number hasn't appeared?", ui);
+    }
+    static findBestFriends() {
+        const ui = new UiBestFriendsResult();
+        new SearchTool('Find your favorite number best(s) friend(s)', ui);
     }
 }

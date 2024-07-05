@@ -1,5 +1,5 @@
 import { createGenericContainer, createSpecificContainer } from './helpers';
-import { Storage } from './Storage';
+import { Draws } from './Data/draws';
 import { Draw } from './draw';
 
 export class DrawHistory {
@@ -10,7 +10,7 @@ export class DrawHistory {
         this.displayHandler();
     }
     fetchRelatedDraws(userSelection) {
-        Storage.data.forEach((obj)=> {
+        Draws.draws.forEach((obj)=> {
             const blueBsCount = this.comparesNumbers(userSelection.blueBalls, obj.blueBalls);
             const yellowBsCount =  this.comparesNumbers(userSelection.yellowBalls, obj.yellowBalls);
             const total = blueBsCount + yellowBsCount;
@@ -33,7 +33,7 @@ export class DrawHistory {
         const mainContainer = 
         createGenericContainer(
         'feedback',
-        `${this.data.length} combinations found among ${Storage.data.length} draws`, 
+        `${this.data.length} combinations found among ${Draws.draws.length} draws`, 
         'blue-banner--med'
         );
         const speContainer = 

@@ -1,16 +1,20 @@
-import { BrowserStorage } from './browserStorage';
+import { BrowserStorage } from './Data/browserStorage';
 import { createGenericContainer, createSpecificContainer } from './helpers';
 
 export class SearchTool {
-    constructor() {
-        this.display();
+    constructor(title, feedback) {
+        this.feedback = feedback;
+        this.title = title;
+        this.mainContainer;
+        this.display(this.title);
     }
-    display() {
+    display(title) {
         const mainContainer = createGenericContainer(
             'search-tool', 
-            'Find your favorite number best(s) friend(s)', 
+            `${title}`, 
             'blue-banner--med'
         );
+        this.mainContainer = mainContainer;
         const speContainer = createSpecificContainer(mainContainer, ['search-form'], 'form');
         this.addContent(speContainer);
         this.addEventListeners(speContainer);
@@ -32,7 +36,7 @@ export class SearchTool {
             <label for="num-input">Enter number:</label>
             <input id="num-input" class="num-input" type="number" name="num-input">
         </div>
-        <p class="search-form__error-mess none">Enter valid number</p>
+        <p class="search-form__error-mess none">Enter valid number!</p>
         <button id="search-form__btn" class="btn btn--disabled" type="button">Search</button>
         `
     }
@@ -69,17 +73,11 @@ export class SearchTool {
                 const searchInfo = this.checkUserInput(this.getUserInput());
                 if(searchInfo) {
                     BrowserStorage.saveUserInfo('searchInfo', searchInfo);
-                    console.log('sending info')
+                    document.querySelector('.overlay').remove(); // remove searchTool
+                    this.feedback.display(BrowserStorage.getUserInfo('searchInfo'))
                 } else {
                     this.showErrorMess();
                 }
-                
-              
-               /*  if(true) {
-                    send info
-                } else {
-                    this.showErrorMess()
-                } */
             }
         });
     }

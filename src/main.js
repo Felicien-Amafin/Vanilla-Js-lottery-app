@@ -1,16 +1,15 @@
 import './scss/main.scss'
 import { Navigation } from './js/navigation';
-import { Storage } from './js/Storage';
-import { Api } from './js/api';
-import { LastResultsList } from './js/lastResultsList';
+import { Draws } from './js/Data/draws';
+import { Api } from './js/Data/api';
+import { LastResults } from './js/lastResults';
 import { Menu } from './js/menu';
-
 
 class App {
     static init() {
-        Navigation.clickListenerHandler('last-results', 'tools');
-        Storage.dataInit(Api.data);
-        LastResultsList.display(LastResultsList.thirtyLastDraws);
+        Navigation.clickListenerHandler('results', 'tools'); // Add click listeners on nav elements
+        Draws.initDraws(Api.data);
+        LastResults.display(LastResults.lastDraws);
         Menu.addClickListeners();
     }
 }

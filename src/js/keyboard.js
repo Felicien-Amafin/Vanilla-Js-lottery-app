@@ -1,7 +1,7 @@
 import { DrawHistory } from "./drawHistory";
 
 export class Keyboard {
-    static pageContainer;
+    static page;
     static countBlue = 0;
     static countYellow = 0;
     static selectedBalls = {
@@ -9,23 +9,24 @@ export class Keyboard {
         yellowBalls: [],
         min:'',
     };
-    static displayHandler = ()=> {
+    static display = ()=> {
         this.appendNode();
         this.renderKeyboardKeys(1, 50, 'blue');
         this.renderKeyboardKeys(1, 12, 'yellow');
         this.addEvListenerToKeys('blue', 5, this.countBlue);
         this.addEvListenerToKeys('yellow', 2, this.countYellow);
-        this.addClosingCrossEvListener(this.pageContainer);
-        this.addDropDownInput(this.pageContainer);
-        this.addBtnEventListener(this.pageContainer);
+        this.addClosingCrossEvListener(this.page);
+        this.addDropDownInput(this.page);
+        this.addBtnEventListener(this.page);
     }
     static appendNode() {
-        const pageContainer = document.getElementById('page-container');
-        this.pageContainer = pageContainer;
-        const KeyboardTemp = document.getElementById('keyboard-temp');
-        const keyboard = KeyboardTemp.content.cloneNode(true);
+        //Gets content of keyboard template + appends keyboard to page
+        const page = document.getElementById('page');
+        this.page = page;
+        const KeyboardTemplt = document.getElementById('keyboard-templt');
+        const keyboard = KeyboardTemplt.content.cloneNode(true);
         this.disableBtn(keyboard);
-        pageContainer.appendChild(keyboard);
+        page.appendChild(keyboard);
     }
     static renderKeyboardKeys(MIN, MAX, color) {
         const keyboard = document.getElementById('keyboard');
@@ -46,7 +47,7 @@ export class Keyboard {
         const keysContainer = keyboard.querySelector(`.keyboard__${keyColor}-keys`);
         keysContainer.addEventListener('click', (event)=> {
             const bool = event.target.classList.contains(`keyboard__${keyColor}-keys`);
-            if(!bool) {//Add keyboard-key__clicked on keys only
+            if(!bool) {
                 if(keyCount < maxKey) {
                     event.target.classList.toggle(`keyboard-key__clicked--${keyColor}`);
                     const bool = event.target.classList.contains(`keyboard-key__clicked--${keyColor}`);
@@ -101,11 +102,11 @@ export class Keyboard {
             }
         })
     }
-    static addClosingCrossEvListener(pageContainer) {
-        const closingCross = pageContainer.querySelector('#keyboard__closing-cross');
+    static addClosingCrossEvListener(page) {
+        const closingCross = page.querySelector('#keyboard__closing-cross');
         closingCross.addEventListener('click', ()=> {
             this.resetClassVariables();
-            pageContainer.querySelector('.overlay').remove();
+            page.querySelector('.overlay').remove();
         });
     }
     static addDropDownInput(parentNode) {
@@ -114,12 +115,12 @@ export class Keyboard {
             dropDown.insertAdjacentHTML('beforeend', `<option value="${i}">${i}</option>`);
         }
     }
-    static addBtnEventListener(pageContainer) {
-        const btn = pageContainer.querySelector('#keyboard__btn');
+    static addBtnEventListener(page) {
+        const btn = page.querySelector('#keyboard__btn');
         btn.addEventListener('click', ()=> {
             this.storeSelectedBalls(['blue', 'yellow'])
-            document.getElementById('overlay').remove();
-            new DrawHistory(this.selectedBalls);
+            document.getElementById('overlay').remove(); // remove keyBoard
+            new DrawHistory(this.selectedBalls); 
             this.resetClassVariables();
         });
     }

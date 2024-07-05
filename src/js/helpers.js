@@ -8,7 +8,7 @@ export const createGenericContainer = (subContainerClass, h2Title, h2AdditionalC
         <h2 id="subContainer__title" class="blue-banner ${h2AdditionalClass}">${h2Title}</h2>
     </article>
     `
-    document.getElementById('page-container').appendChild(mainContainer);
+    document.getElementById('page').appendChild(mainContainer);
     document.getElementById('subContainer__cross').addEventListener('click', ()=> {
         mainContainer.remove();
     })
