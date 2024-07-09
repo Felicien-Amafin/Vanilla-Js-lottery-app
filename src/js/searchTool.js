@@ -63,7 +63,11 @@ export class SearchTool {
         })
     }
     addBtnEvListner(parentNode) {
-        parentNode.querySelector('#search-form__btn').addEventListener('click', ()=> {
+        parentNode.addEventListener('submit', (event)=> {
+            event.preventDefault();
+        })
+        document.getElementById('search-form__btn').addEventListener('click', (event)=> {
+            event.preventDefault()
             if(!document.querySelector('.search-form__error-mess').classList.contains('none')) {
                 // Remove error Mess if it has been displayed previously
                 this.hideErrorMess();

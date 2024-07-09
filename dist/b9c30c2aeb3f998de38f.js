@@ -34352,7 +34352,11 @@ class SearchTool {
         })
     }
     addBtnEvListner(parentNode) {
-        parentNode.querySelector('#search-form__btn').addEventListener('click', ()=> {
+        parentNode.addEventListener('submit', (event)=> {
+            event.preventDefault();
+        })
+        document.getElementById('search-form__btn').addEventListener('click', (event)=> {
+            event.preventDefault()
             if(!document.querySelector('.search-form__error-mess').classList.contains('none')) {
                 // Remove error Mess if it has been displayed previously
                 this.hideErrorMess();
@@ -34668,4 +34672,4 @@ App.init();
 
 /******/ })()
 ;
-//# sourceMappingURL=f4d04dc3985b359f797a.js.map
+//# sourceMappingURL=b9c30c2aeb3f998de38f.js.map
