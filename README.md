@@ -22,7 +22,7 @@ This app allows you to check last euromillions' results. It also provides 4 tool
 ## Installation & Testing
 <br/>
 
-`To install the project: first run "npm install".To test the project: run "npm run dev"` or click here: [https://noteapp-5e437.web.app/](https://lotteryapp-8c92c.web.app/)
+`To install the project: first run "npm install".To test the project: run "npm run serv"` or click here: [https://noteapp-5e437.web.app/](https://lotteryapp-8c92c.web.app/)
 <br/>
 <br/>
 
